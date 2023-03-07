@@ -1,0 +1,16 @@
+apply from: 'helper.gradle'
+
+ext {
+    minecraftVersion = "1.19.3"
+    // https://www.curseforge.com/minecraft/mc-mods/jei/files
+    jeiVersion = "12.0.2.2"
+    // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
+    reiVersion = "10.0.581"
+    architecturyVersion = "7.1.70" // dependency of rei
+    clothMathVersion = "0.6.1" // dependency of rei
+    clothConfigVersion = "9.0.94" // dependency of rei
+}
+
+subprojects {
+    group = 'com.refinedmods.refinedarchitect'
+}
