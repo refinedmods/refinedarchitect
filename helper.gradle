@@ -1,0 +1,131 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
+    }
+}
+
+subprojects {
+    version = '0.0.0'
+
+    if (System.getenv('GITHUB_SHA') != null) {
+        version += '+' + System.getenv('GITHUB_SHA').substring(0, 7)
+    }
+
+    if (System.getenv('RELEASE_VERSION') != null) {
+        version = System.getenv('RELEASE_VERSION')
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = 'UTF-8'
+        it.options.release.set(17)
+        it.options.deprecation = true
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation "com.google.code.findbugs:jsr305:3.0.2"
+    }
+
+    apply plugin: 'checkstyle'
+    checkstyle {
+        toolVersion = "10.6.0"
+    }
+
+    processResources {
+        inputs.property 'version', project.version
+
+        filesMatching(['fabric.mod.json', 'META-INF/mods.toml']) {
+            expand 'version': project.version
+        }
+    }
+
+    apply plugin: 'maven-publish'
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/" + System.getenv("GITHUB_REPOSITORY"))
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+            maven {
+                name = "CreeperHost"
+                url = uri("https://maven.creeperhost.net/release")
+                credentials {
+                    username = System.getenv("CREEPERHOST_MAVEN_USERNAME")
+                    password = System.getenv("CREEPERHOST_MAVEN_TOKEN")
+                }
+            }
+        }
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
+
+    ext.enablePitest = {
+        apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
+        pitest {
+            junit5PluginVersion = "1.1.2"
+            pitestVersion = "1.10.4"
+            outputFormats.set(['HTML'])
+            mutationThreshold.set(90)
+            coverageThreshold.set(80)
+        }
+    }
+
+    ext.enableJavadoc = {
+        ext.javadocEnabled = true
+    }
+}
+
+tasks.register('allJavadoc', Javadoc) {
+    def projects = subprojects.stream().filter {p -> p.hasProperty('javadocEnabled')}.toList()
+    source projects*.sourceSets.main.allJava
+    classpath += files(projects*.sourceSets.main.compileClasspath)
+    destinationDir = file("build/docs/javadoc")
+}
+
+// http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
+tasks.register('codeCoverageReport', JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+    reports {
+        html.required = true
+        xml.required = true
+    }
+}
+
+// always run the tests before generating the report
+codeCoverageReport.dependsOn {
+    subprojects*.test
+}
+
+ext.enableSonarQube = (String projectKey, String organization = "refinedmods") -> {
+    apply plugin: org.sonarqube.gradle.SonarQubePlugin
+    // https://docs.sonarqube.org/latest/analysis/github-integration/
+    sonarqube {
+        properties {
+            property "sonar.projectKey", projectKey
+            property "sonar.organization", organization
+            property "sonar.host.url", "https://sonarcloud.io"
+            property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
+        }
+    }
+}

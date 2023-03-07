@@ -1,0 +1,20 @@
+name: Publish release
+on:
+  workflow_dispatch:
+    inputs:
+      version-number:
+        description: 'Version number'
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: ./.github/actions/setup-java
+      - name: Publish
+        run: ./gradlew publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CREEPERHOST_MAVEN_USERNAME: ${{ secrets.CREEPERHOST_MAVEN_USERNAME }}
+          CREEPERHOST_MAVEN_TOKEN: ${{ secrets.CREEPERHOST_MAVEN_TOKEN }}

@@ -1,0 +1,19 @@
+plugins {
+    id 'version-catalog'
+}
+
+catalog {
+    versionCatalog {
+        version("minecraft", rootProject.minecraftVersion)
+        library("jei-api", "mezz.jei", "jei-${rootProject.minecraftVersion}-common-api").version(rootProject.jeiVersion)
+        library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api").version(rootProject.reiVersion)
+    }
+}
+
+publishing {
+    publications {
+        create("maven", MavenPublication) {
+            from(components.versionCatalog)
+        }
+    }
+}
