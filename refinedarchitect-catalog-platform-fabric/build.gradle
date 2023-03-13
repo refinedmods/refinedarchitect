@@ -4,7 +4,7 @@ plugins {
 
 catalog {
     versionCatalog {
-        library("minecraft", "com.mojang", "minecraft").version(rootProject.minecraftVersion)
+        library("minecraft", "com.mojang", "minecraft").version(minecraftVersion)
 
         plugin("fabric-loom", "fabric-loom").version("1.1-SNAPSHOT")
 
@@ -14,21 +14,21 @@ catalog {
         library("fabric-api", "net.fabricmc.fabric-api", "fabric-api").versionRef(fabricApi)
 
         def parchment = version("parchment", "2022.12.18")
-        library("parchment", "org.parchmentmc.data", "parchment-${rootProject.minecraftVersion}").versionRef(parchment)
+        library("parchment", "org.parchmentmc.data", "parchment-${minecraftVersion}").versionRef(parchment)
 
         // https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
-        library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").version(rootProject.clothConfigVersion)
+        library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").version(clothConfigVersion)
 
         // https://github.com/TechReborn/Energy
         def energy = version("teamreborn-energy", "2.1.0")
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
-        library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-fabric").version(rootProject.reiVersion)
-        library("rei-architectury", "dev.architectury", "architectury-fabric").version(rootProject.architecturyVersion)
-        library("rei-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin").version(rootProject.reiVersion)
+        library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-fabric").version(reiVersion)
+        library("rei-architectury", "dev.architectury", "architectury-fabric").version(architecturyVersion)
+        library("rei-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin").version(reiVersion)
 
-        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-fabric-api").version(rootProject.jeiVersion)
-        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-fabric").version(rootProject.jeiVersion)
+        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-fabric-api").version(jeiVersion)
+        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-fabric").version(jeiVersion)
 
         // https://www.curseforge.com/minecraft/mc-mods/modmenu/files
         def modmenu = version("modmenu", "5.0.2")
