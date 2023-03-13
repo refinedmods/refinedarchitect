@@ -93,7 +93,7 @@ subprojects {
 }
 
 tasks.register('allJavadoc', Javadoc) {
-    def projects = subprojects.stream().filter {p -> p.hasProperty('javadocEnabled')}.map { it.name }.toList()
+    def projects = subprojects.stream().filter {p -> p.hasProperty('javadocEnabled')}.toList()
     source projects*.sourceSets.main.allJava
     classpath += files(projects*.sourceSets.main.compileClasspath)
     destinationDir = file("build/docs/javadoc")
