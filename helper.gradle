@@ -10,6 +10,7 @@ subprojects {
     }
 
     apply plugin: 'maven-publish'
+    apply plugin: 'java'
     publishing {
         repositories {
             maven {
@@ -27,6 +28,11 @@ subprojects {
                     username = System.getenv("CREEPERHOST_MAVEN_USERNAME")
                     password = System.getenv("CREEPERHOST_MAVEN_TOKEN")
                 }
+            }
+        }
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
             }
         }
     }
