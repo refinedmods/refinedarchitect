@@ -19,6 +19,7 @@ subprojects {
     }
 
     apply plugin: 'java'
+    apply plugin: 'jacoco'
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
     tasks.withType(JavaCompile).configureEach {
@@ -76,7 +77,6 @@ subprojects {
     }
 
     ext.enablePitest = {
-        apply plugin: 'java'
         apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
         pitest {
             junit5PluginVersion = "1.1.2"
@@ -86,4 +86,21 @@ subprojects {
             coverageThreshold.set(80)
         }
     }
+}
+
+// http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
+tasks.register('codeCoverageReport', JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+    reports {
+        html.required = true
+        xml.required = true
+    }
+}
+
+// always run the tests before generating the report
+codeCoverageReport.dependsOn {
+    subprojects*.test
 }
