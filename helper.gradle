@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
     }
 }
 
@@ -114,4 +115,17 @@ tasks.register('codeCoverageReport', JacocoReport) {
 // always run the tests before generating the report
 codeCoverageReport.dependsOn {
     subprojects*.test
+}
+
+ext.enableSonarQube = (String projectKey, String organization = "refinedmods") -> {
+    apply plugin: org.sonarqube.gradle.SonarQubePlugin
+    // https://docs.sonarqube.org/latest/analysis/github-integration/
+    sonarqube {
+        properties {
+            property "sonar.projectKey", projectKey
+            property "sonar.organization", organization
+            property "sonar.host.url", "https://sonarcloud.io"
+            property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
+        }
+    }
 }

@@ -13,8 +13,6 @@ catalog {
         library("mixin", "org.spongepowered", "mixin").versionRef(mixin)
         plugin("mixin", "org.spongepowered.gradle.vanilla").version("0.2.1-SNAPSHOT")
 
-        plugin("sonarqube", "org.sonarqube").version("3.3")
-
         def apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
