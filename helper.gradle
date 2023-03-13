@@ -1,10 +1,15 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            name = 'Sponge / Mixin'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
     }
     dependencies {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
+        classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
     }
 }
 
@@ -77,6 +82,17 @@ subprojects {
         }
     }
 
+    ext {
+        minecraftVersion = "1.19.3"
+        // https://www.curseforge.com/minecraft/mc-mods/jei/files
+        jeiVersion = "12.0.2.2"
+        // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
+        reiVersion = "10.0.581"
+        architecturyVersion = "7.1.70" // dependency of rei
+        clothMathVersion = "0.6.1" // dependency of rei
+        clothConfigVersion = "9.0.94" // dependency of rei
+    }
+
     ext.enablePitest = {
         apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
         pitest {
@@ -90,6 +106,13 @@ subprojects {
 
     ext.enableJavadoc = {
         ext.javadocEnabled = true
+    }
+
+    ext.commonProject = {
+        apply plugin: org.spongepowered.gradle.vanilla.VanillaGradle
+        minecraft {
+            version(minecraftVersion)
+        }
     }
 }
 

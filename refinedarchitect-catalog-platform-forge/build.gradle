@@ -4,14 +4,14 @@ plugins {
 
 catalog {
     versionCatalog {
-        library("minecraft", "net.minecraftforge", "forge").version("${rootProject.minecraftVersion}-44.1.5")
+        library("minecraft", "net.minecraftforge", "forge").version("${minecraftVersion}-44.1.5")
 
-        library("jei-api", "mezz.jei", "jei-${rootProject.minecraftVersion}-forge-api").version(rootProject.jeiVersion)
-        library("jei-impl", "mezz.jei", "jei-${rootProject.minecraftVersion}-forge").version(rootProject.jeiVersion)
+        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-forge-api").version(jeiVersion)
+        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-forge").version(jeiVersion)
 
-        library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-forge").version(rootProject.reiVersion)
-        library("rei-architectury", "dev.architectury", "architectury-forge").version(rootProject.architecturyVersion)
-        library("rei-cloth-math", "me.shedaniel.cloth", "basic-math").version(rootProject.clothMathVersion)
+        library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-forge").version(reiVersion)
+        library("rei-architectury", "dev.architectury", "architectury-forge").version(architecturyVersion)
+        library("rei-cloth-math", "me.shedaniel.cloth", "basic-math").version(clothMathVersion)
 
         plugin('forgeGradle', 'net.minecraftforge.gradle').version('5.1.+')
     }

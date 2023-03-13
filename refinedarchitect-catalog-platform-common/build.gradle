@@ -4,9 +4,9 @@ plugins {
 
 catalog {
     versionCatalog {
-        version("minecraft", rootProject.minecraftVersion)
-        library("jei-api", "mezz.jei", "jei-${rootProject.minecraftVersion}-common-api").version(rootProject.jeiVersion)
-        library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api").version(rootProject.reiVersion)
+        version("minecraft", minecraftVersion)
+        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-common-api").version(jeiVersion)
+        library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api").version(reiVersion)
     }
 }
 
