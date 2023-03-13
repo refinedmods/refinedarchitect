@@ -74,16 +74,16 @@ subprojects {
             }
         }
     }
-}
 
-ext.enablePitest = {
-    apply plugin: 'java'
-    apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
-    pitest {
-        junit5PluginVersion = "1.1.2"
-        pitestVersion = "1.10.4"
-        outputFormats.set(['HTML'])
-        mutationThreshold.set(90)
-        coverageThreshold.set(80)
+    ext.enablePitest = {
+        apply plugin: 'java'
+        apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
+        pitest {
+            junit5PluginVersion = "1.1.2"
+            pitestVersion = "1.10.4"
+            outputFormats.set(['HTML'])
+            mutationThreshold.set(90)
+            coverageThreshold.set(80)
+        }
     }
 }
