@@ -86,6 +86,17 @@ subprojects {
             coverageThreshold.set(80)
         }
     }
+
+    ext.enableJavadoc = {
+        ext.javadocEnabled = true
+    }
+}
+
+tasks.register('allJavadoc', Javadoc) {
+    def projects = subprojects.stream().filter {p -> p.hasProperty('javadocEnabled')}.map { it.name }.toList()
+    source projects*.sourceSets.main.allJava
+    classpath += files(projects*.sourceSets.main.compileClasspath)
+    destinationDir = file("build/docs/javadoc")
 }
 
 // http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
