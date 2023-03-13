@@ -9,8 +9,16 @@ subprojects {
         version = System.getenv('RELEASE_VERSION')
     }
 
-    apply plugin: 'maven-publish'
     apply plugin: 'java'
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = 'UTF-8'
+        it.options.release.set(17)
+        it.options.deprecation = true
+    }
+
+    apply plugin: 'maven-publish'
     publishing {
         repositories {
             maven {
