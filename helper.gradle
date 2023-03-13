@@ -18,6 +18,14 @@ subprojects {
         it.options.deprecation = true
     }
 
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation "com.google.code.findbugs:jsr305:3.0.2"
+    }
+
     processResources {
         inputs.property 'version', project.version
 

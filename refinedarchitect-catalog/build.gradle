@@ -24,9 +24,6 @@ catalog {
         def apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
-        def jsr305 = version("jsr305", "3.0.2")
-        library("jsr305", "com.google.code.findbugs", "jsr305").versionRef(jsr305)
-
         def junit5 = version("junit5", "5.9.2")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
