@@ -113,6 +113,12 @@ subprojects {
         minecraft {
             version(minecraftVersion)
         }
+        sourceSets {
+            main.resources.srcDirs += 'src/generated/resources'
+        }
+        dependencies {
+            compileOnly "org.spongepowered:mixin:0.8.4"
+        }
     }
 }
 

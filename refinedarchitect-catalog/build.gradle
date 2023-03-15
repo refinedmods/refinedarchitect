@@ -9,10 +9,6 @@ catalog {
         library("slf4j-api", "org.slf4j", "slf4j-api").versionRef(slf4j)
         library("slf4j-impl", "org.slf4j", "slf4j-simple").versionRef(slf4j)
 
-        def mixin = version("mixin", "0.8.4")
-        library("mixin", "org.spongepowered", "mixin").versionRef(mixin)
-        plugin("mixin", "org.spongepowered.gradle.vanilla").version("0.2.1-SNAPSHOT")
-
         def apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
