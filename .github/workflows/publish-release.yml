@@ -13,6 +13,10 @@ on:
       project-name:
         required: true
         type: string
+      announce:
+        required: false
+        type: boolean
+        default: true
 jobs:
   extract-version-number:
     name: Extract version number
@@ -126,6 +130,7 @@ jobs:
     name: Announce to Discord
     runs-on: ubuntu-latest
     needs: [ deploy-github-releases, extract-version-number ]
+    if: ${{ inputs.announce == true }}
     env:
       RELEASE_VERSION: ${{ needs.extract-version-number.outputs.version }}
       RELEASE_URL: ${{ needs.deploy-github-releases.outputs.release-url }}
@@ -142,6 +147,7 @@ jobs:
     name: Announce to Twitter
     runs-on: ubuntu-latest
     needs: [ deploy-github-releases, extract-version-number ]
+    if: ${{ inputs.announce == true }}
     steps:
       - name: Announce to Twitter
         uses: ethomson/send-tweet-action@v1
@@ -156,6 +162,7 @@ jobs:
     name: Announce to Mastodon
     runs-on: ubuntu-latest
     needs: [ deploy-github-releases, extract-version-number ]
+    if: ${{ inputs.announce == true }}
     steps:
       - name: Announce to Mastodon
         uses: rzr/fediverse-action@master

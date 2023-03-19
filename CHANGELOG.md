@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 -   Publishing to Maven is now opt-in with `enablePublishing`.
+-   Announcing new releases is now opt-in.
 
 ## [0.0.2] - 2023-03-19
 
