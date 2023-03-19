@@ -128,7 +128,7 @@ subprojects {
         }
     }
 
-    ext.forgeProject = { String modId, Project commonProject, String[] apis = [], String[] compileApis = [] ->
+    ext.forgeProject = { String modId, Project commonProject, ArrayList apis = [], ArrayList compileApis = [] ->
         apply plugin: net.minecraftforge.gradle.userdev.UserDevPlugin
         minecraft {
             mappings channel: 'official', version: minecraftVersion
