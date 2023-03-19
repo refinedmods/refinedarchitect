@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fixed using relative path for `setup-java` in build and publish workflow.
+
 ## [0.0.1] - 2023-03-19
 
 ### Added
