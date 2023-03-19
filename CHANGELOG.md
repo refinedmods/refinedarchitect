@@ -9,4 +9,6 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
--  Initial
+-   Version catalogs.
+-   Fabric and Forge helpers.
+-   CI workflows.
