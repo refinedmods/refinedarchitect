@@ -64,8 +64,7 @@ release cycle of the new version, which isn't correct.
 
 Whenever we port to a new Minecraft version, at least the minor version should be incremented.
 
-This is needed so that we can still support older Minecraft versions without the Refined Storage version numbers
-conflicting.
+This is needed so that we can still support older Minecraft versions without the version numbers conflicting.
 
 ## Changelog
 
