@@ -109,7 +109,7 @@ subprojects {
         clothConfigVersion = "9.0.94" // dependency of rei
     }
 
-    ext.enablePitest = {
+    ext.enableMutationTesting = {
         apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
         pitest {
             junit5PluginVersion = "1.1.2"

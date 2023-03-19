@@ -11,7 +11,7 @@ on:
       version:
         required: false
         type: string
-      pitest:
+      mutation-testing:
         required: false
         type: boolean
         default: false
@@ -61,7 +61,7 @@ jobs:
           reports: |
             **/build/reports/checkstyle/*.xml
       - name: Mutation testing
-        if: ${{ inputs.pitest == true }}
+        if: ${{ inputs.mutation-testing == true }}
         run: ./gradlew pitest
       - name: Upload build artifacts
         if: ${{ runner.os == 'Linux' }}
