@@ -13,6 +13,10 @@ buildscript {
     }
 }
 
+allprojects {
+    apply plugin: 'jacoco'
+}
+
 subprojects {
     version = '0.0.0'
 
@@ -25,7 +29,6 @@ subprojects {
     }
 
     apply plugin: 'java'
-    apply plugin: 'jacoco'
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
     tasks.withType(JavaCompile).configureEach {
@@ -129,7 +132,7 @@ tasks.register('allJavadoc', Javadoc) {
     destinationDir = file("build/docs/javadoc")
 }
 
-// http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
+// https://web.archive.org/web/20200206112725/http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
 tasks.register('codeCoverageReport', JacocoReport) {
     executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
     subprojects.each {
