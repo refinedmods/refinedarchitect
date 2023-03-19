@@ -1,11 +1,5 @@
 name: Build
 on:
-  push:
-    branches:
-      - develop
-      - main
-  pull_request:
-    types: [ opened, synchronize, reopened ]
   workflow_call:
     inputs:
       version:
@@ -24,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set version number
-        if: "${{ inputs.version != '' }}"
+        if: ${{ inputs.version != '' }}
         run: |
           echo "RELEASE_VERSION=${{ inputs.version }}" >> $GITHUB_ENV
       - name: Checkout repository
@@ -35,6 +29,7 @@ jobs:
         uses: ./.github/actions/setup-java
       # https://docs.sonarqube.org/latest/analysis/github-integration/
       - name: Cache SonarQube packages
+        if: ${{ inputs.sonarqube == true }}
         uses: actions/cache@v3
         with:
           path: ~/.sonar/cache
@@ -52,7 +47,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Publish test report
         uses: mikepenz/action-junit-report@v3
-        if: always() # always run even if the previous step fails
+        if: always()
         with:
           report_paths: '**/build/test-results/test/TEST-*.xml'
       - name: Publish Checkstyle report
