@@ -1,0 +1,14 @@
+name: Publish release
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+jobs:
+  publish-release:
+    uses: ./.github/workflows/publish-release.yml
+    secrets: inherit
+    with:
+      mutation-testing: false
+      project-name: 'Refined Architect'
