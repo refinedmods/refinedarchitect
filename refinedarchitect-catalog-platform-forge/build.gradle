@@ -1,0 +1,22 @@
+plugins {
+    id 'version-catalog'
+}
+
+catalog {
+    versionCatalog {
+        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-forge-api").version(jeiVersion)
+        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-forge").version(jeiVersion)
+
+        library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-forge").version(reiVersion)
+        library("rei-architectury", "dev.architectury", "architectury-forge").version(architecturyVersion)
+        library("rei-cloth-math", "me.shedaniel.cloth", "basic-math").version(clothMathVersion)
+    }
+}
+
+publishing {
+    publications {
+        create("maven", MavenPublication) {
+            from(components.versionCatalog)
+        }
+    }
+}
