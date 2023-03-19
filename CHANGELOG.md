@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.1] - 2023-03-19
+
 ### Added
 
--  Initial
+-   Initial
+
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.0.1...HEAD
+
+[0.0.1]: https://github.com/refinedmods/refinedarchitect/compare/999bc56a1b8317486dcc228a8a3aec9711eacd7d...v0.0.1
