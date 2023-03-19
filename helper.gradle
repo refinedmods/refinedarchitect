@@ -24,6 +24,9 @@ buildscript {
 }
 
 allprojects {
+    repositories {
+        mavenCentral()
+    }
     apply plugin: 'jacoco'
 }
 
