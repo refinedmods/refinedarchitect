@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.0.2] - 2023-03-19
+
+### Fixed
+
+-   Fixed using relative path for `setup-java` in build and publish workflow.
+
 ## [0.0.1] - 2023-03-19
 
 ### Added
@@ -15,6 +21,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Fabric and Forge helpers.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.0.2...HEAD
+
+[0.0.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.0.1...v0.0.2
 
 [0.0.1]: https://github.com/refinedmods/refinedarchitect/compare/61e387b9810833cbe7c23b9fdf8c493e212ecba9...v0.0.1
