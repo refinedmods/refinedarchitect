@@ -3,3 +3,5 @@ apply from: 'helper.gradle'
 subprojects {
     group = 'com.refinedmods.refinedarchitect'
 }
+
+enableSonarQube("refinedmods_refinedarchitect")
