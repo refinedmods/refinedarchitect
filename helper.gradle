@@ -5,11 +5,15 @@ buildscript {
             name = 'Sponge / Mixin'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
+        maven {
+            url = 'https://maven.minecraftforge.net'
+        }
     }
     dependencies {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.+'
     }
 }
 
@@ -123,10 +127,78 @@ subprojects {
             compileOnly "org.spongepowered:mixin:0.8.4"
         }
     }
+
+    ext.forgeProject = { String modId, Project commonProject, String[] apis = [], String[] compileApis = [] ->
+        apply plugin: net.minecraftforge.gradle.userdev.UserDevPlugin
+        minecraft {
+            mappings channel: 'official', version: minecraftVersion
+            accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+            runs {
+                client {
+                    workingDirectory project.file('run')
+                    ideaModule "${rootProject.name}.${project.name}.main"
+                    taskName 'Client'
+                    mods {
+                        modClientRun {
+                            source sourceSets.main
+                            apis.collect {
+                                source(project(it).sourceSets.main)
+                            }
+                            compileApis.collect {
+                                source(project(it).sourceSets.main)
+                            }
+                        }
+                    }
+                }
+                server {
+                    workingDirectory project.file('run')
+                    ideaModule "${rootProject.name}.${project.name}.main"
+                    taskName 'Server'
+                    mods {
+                        modServerRun {
+                            source sourceSets.main
+                            apis.collect {
+                                source(project(it).sourceSets.main)
+                            }
+                            compileApis.collect {
+                                source(project(it).sourceSets.main)
+                            }
+                        }
+                    }
+                }
+                data {
+                    args '--mod', modId, '--all', '--output', commonProject.file('src/generated/resources'), "--existing", commonProject.file('src/main/resources')
+                    ideaModule "${rootProject.name}.${project.name}.main"
+                    taskName 'Data'
+                }
+            }
+        }
+        dependencies {
+            minecraft "net.minecraftforge:forge:${minecraftVersion}-44.1.5"
+            apis.collect {
+                implementation project(it)
+            }
+            compileApis.collect {
+                implementation project(it)
+            }
+        }
+        processResources {
+            from commonProject.sourceSets.main.resources
+        }
+        tasks.withType(JavaCompile) {
+            apis.collect {
+                source(project(it).sourceSets.main.allSource)
+            }
+            compileApis.collect {
+                source(project(it).sourceSets.main.allSource)
+            }
+        }
+        jar.finalizedBy('reobfJar')
+    }
 }
 
 tasks.register('allJavadoc', Javadoc) {
-    def projects = subprojects.stream().filter {p -> p.hasProperty('javadocEnabled')}.toList()
+    def projects = subprojects.stream().filter { p -> p.hasProperty('javadocEnabled') }.toList()
     source projects*.sourceSets.main.allJava
     classpath += files(projects*.sourceSets.main.compileClasspath)
     destinationDir = file("build/docs/javadoc")
