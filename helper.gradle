@@ -6,7 +6,12 @@ buildscript {
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
         maven {
+            name = 'Forge'
             url = 'https://maven.minecraftforge.net'
+        }
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
         }
     }
     dependencies {
@@ -14,6 +19,7 @@ buildscript {
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
         classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.+'
+        classpath 'fabric-loom:fabric-loom.gradle.plugin:1.1-SNAPSHOT'
     }
 }
 
@@ -194,6 +200,70 @@ subprojects {
             }
         }
         jar.finalizedBy('reobfJar')
+    }
+
+    ext.fabricProject = { String modId, Project commonProject, ArrayList apis = [], ArrayList compileApis = [] ->
+        repositories {
+            maven {
+                name = 'Parchment'
+                url 'https://maven.parchmentmc.org'
+            }
+        }
+        apply plugin: net.fabricmc.loom.bootstrap.LoomGradlePluginBootstrap
+        dependencies {
+            minecraft "com.mojang:minecraft:${minecraftVersion}"
+            mappings loom.layered() {
+                officialMojangMappings()
+                parchment("org.parchmentmc.data:parchment-${minecraftVersion}:2022.12.18@zip")
+            }
+            modImplementation "net.fabricmc:fabric-loader:0.14.14"
+            modImplementation "net.fabricmc.fabric-api:fabric-api:0.73.2+1.19.3"
+            apis.collect {
+                implementation project(it)
+                include project(it)
+            }
+            compileApis.collect {
+                implementation project(it)
+            }
+        }
+        processResources {
+            from commonProject.sourceSets.main.resources
+        }
+        tasks.withType(JavaCompile) {
+            compileApis.collect {
+                source(project(it).sourceSets.main.allSource)
+            }
+        }
+        jar {
+            from '../LICENSE.md'
+        }
+        loom {
+            def accessWidenerFile = file("src/main/resources/${modId}.accesswidener")
+            if (accessWidenerFile.exists()) {
+                accessWidenerPath = accessWidenerFile
+            }
+            runs {
+                client {
+                    client()
+                    setConfigName("Fabric Client")
+                    ideConfigGenerated(true)
+                    runDir("run")
+                }
+                server {
+                    server()
+                    setConfigName("Fabric Server")
+                    ideConfigGenerated(true)
+                    runDir("run")
+                }
+            }
+            mixin {
+                showMessageTypes = true
+                messages {
+                    // silence the warning from shadowing a synthetic field
+                    TARGET_ELEMENT_NOT_FOUND = 'disabled'
+                }
+            }
+        }
     }
 }
 
