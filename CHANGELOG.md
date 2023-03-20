@@ -7,6 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   It's no longer necessary to provide the common project under the `compileApis` argument for `forgeProject` and
+    `fabricProject`.
+
 ## [0.1.0] - 2023-03-19
 
 ### Changed
