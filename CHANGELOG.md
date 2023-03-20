@@ -17,7 +17,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 -   Publishing to Maven is now opt-in with `enablePublishing`.
--   Announcing new releases is now opt-in.
+-   Announcing new releases is now configurable.
 
 ## [0.0.2] - 2023-03-19
 
@@ -30,7 +30,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 -   Version catalogs.
--   Fabric and Forge helpers.
+-   Gradle helpers for Checkstyle, Pitest, etc.
+-   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
 [Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.1.0...HEAD
