@@ -7,12 +7,19 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-03-20
+
+### Changed
+
+-   It's no longer necessary to provide the common project under the `compileApis` argument for `forgeProject` and
+    `fabricProject`.
+
 ## [0.1.0] - 2023-03-19
 
 ### Changed
 
 -   Publishing to Maven is now opt-in with `enablePublishing`.
--   Announcing new releases is now opt-in.
+-   Announcing new releases is now configurable.
 
 ## [0.0.2] - 2023-03-19
 
@@ -25,10 +32,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 -   Version catalogs.
--   Fabric and Forge helpers.
+-   Gradle helpers for Checkstyle, Pitest, etc.
+-   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.2.0...HEAD
+
+[0.2.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.1.0...v0.2.0
 
 [0.1.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.0.2...v0.1.0
 
