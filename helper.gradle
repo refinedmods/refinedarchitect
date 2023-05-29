@@ -72,14 +72,14 @@ subprojects {
     }
 
     ext {
-        minecraftVersion = "1.19.3"
+        minecraftVersion = "1.19.4"
         // https://www.curseforge.com/minecraft/mc-mods/jei/files
-        jeiVersion = "12.0.2.2"
+        jeiVersion = "13.1.0.11"
         // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
-        reiVersion = "10.0.581"
-        architecturyVersion = "7.1.70" // dependency of rei
+        reiVersion = "11.0.603"
+        architecturyVersion = "8.1.73" // dependency of rei
         clothMathVersion = "0.6.1" // dependency of rei
-        clothConfigVersion = "9.0.94" // dependency of rei
+        clothConfigVersion = "10.0.96" // dependency of rei
     }
 
     ext.enableMutationTesting = {
@@ -189,7 +189,7 @@ subprojects {
             }
         }
         dependencies {
-            minecraft "net.minecraftforge:forge:${minecraftVersion}-44.1.5"
+            minecraft "net.minecraftforge:forge:${minecraftVersion}-45.0.64"
             apis.collect {
                 implementation project(it)
             }
@@ -225,10 +225,10 @@ subprojects {
             minecraft "com.mojang:minecraft:${minecraftVersion}"
             mappings loom.layered() {
                 officialMojangMappings()
-                parchment("org.parchmentmc.data:parchment-${minecraftVersion}:2022.12.18@zip")
+                parchment("org.parchmentmc.data:parchment-${minecraftVersion}:2023.03.12@zip")
             }
-            modImplementation "net.fabricmc:fabric-loader:0.14.14"
-            modImplementation "net.fabricmc.fabric-api:fabric-api:0.73.2+1.19.3"
+            modImplementation "net.fabricmc:fabric-loader:0.14.21"
+            modImplementation "net.fabricmc.fabric-api:fabric-api:0.82.0+1.19.4"
             apis.collect {
                 implementation project(it)
                 include project(it)
