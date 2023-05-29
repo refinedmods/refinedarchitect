@@ -225,7 +225,7 @@ subprojects {
             minecraft "com.mojang:minecraft:${minecraftVersion}"
             mappings loom.layered() {
                 officialMojangMappings()
-                parchment("org.parchmentmc.data:parchment-${minecraftVersion}:2023.03.12@zip")
+                parchment("org.parchmentmc.data:parchment-1.19.3:2023.03.12@zip")
             }
             modImplementation "net.fabricmc:fabric-loader:0.14.21"
             modImplementation "net.fabricmc.fabric-api:fabric-api:0.82.0+1.19.4"
