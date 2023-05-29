@@ -7,6 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-05-29
+
+### Changed
+
+-   Upgraded Gradle to v8.1.1.
+-   Upgraded ForgeGradle to v6.
+-   Upgraded Fabric Loom to v1.2.
+
 ## [0.3.1] - 2023-05-29
 
 ### Fixed
@@ -48,7 +56,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.0...HEAD
+
+[0.4.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.3.1...v0.4.0
 
 [0.3.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.3.0...v0.3.1
 
