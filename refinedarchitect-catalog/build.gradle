@@ -4,7 +4,8 @@ plugins {
 
 catalog {
     versionCatalog {
-        // Use the same slf4j API as MC to not break logging in the development environment.
+        // Use the same slf4j API as MC to not break logging in the development environment:
+        // https://launchermeta.mojang.com/mc/game/version_manifest_v2.json
         def slf4j = version("slf4j", "2.0.1")
         library("slf4j-api", "org.slf4j", "slf4j-api").versionRef(slf4j)
         library("slf4j-impl", "org.slf4j", "slf4j-simple").versionRef(slf4j)
@@ -12,18 +13,18 @@ catalog {
         def apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
-        def junit5 = version("junit5", "5.9.2")
+        def junit5 = version("junit5", "5.9.3")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
         library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit5)
 
-        def assertJ = version("assertJ", "3.24.1")
+        def assertJ = version("assertJ", "3.24.2")
         library("assertj", "org.assertj", "assertj-core").versionRef(assertJ)
 
-        def mockito = version("mockito", "5.0.0")
+        def mockito = version("mockito", "5.3.1")
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
-        def equalsVerifier = version("equalsverifier", "3.12.3")
+        def equalsVerifier = version("equalsverifier", "3.14.1")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
     }
 }
