@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Upgraded Gradle to v8.1.1.
+-   Upgraded ForgeGradle to v6.
+-   Upgraded Fabric Loom to v1.2.
+
 ## [0.3.1] - 2023-05-29
 
 ### Fixed
