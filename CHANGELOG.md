@@ -13,9 +13,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.4.1] - 2023-06-13
 
-### Removed
+### Fixed
 
--   Removed Foojay convention plugin.
+-   Fixed build errors by removing Foojay convention plugin.
 
 ## [0.4.0] - 2023-05-29
 
