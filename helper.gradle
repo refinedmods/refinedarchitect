@@ -16,7 +16,7 @@ buildscript {
     }
     dependencies {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.2.1.3168'
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
         classpath 'net.minecraftforge.gradle:ForgeGradle:[6.0,6.2)'
         classpath 'fabric-loom:fabric-loom.gradle.plugin:1.2-SNAPSHOT'

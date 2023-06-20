@@ -7,7 +7,17 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.2] - 2023-06-20
+
+### Fixed
+
+-   Upgraded Sonar Gradle plugin.
+
 ## [0.4.1] - 2023-06-13
+
+### Fixed
+
+-   Fixed build errors by removing Foojay convention plugin.
 
 ## [0.4.0] - 2023-05-29
 
@@ -58,7 +68,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.2...HEAD
+
+[0.4.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.1...v0.4.2
 
 [0.4.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.0...v0.4.1
 
