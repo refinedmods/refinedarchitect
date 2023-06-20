@@ -7,7 +7,15 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Upgraded Sonar Gradle plugin.
+
 ## [0.4.1] - 2023-06-13
+
+### Removed
+
+-   Removed Foojay convention plugin.
 
 ## [0.4.0] - 2023-05-29
 
