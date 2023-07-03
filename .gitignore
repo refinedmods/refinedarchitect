@@ -15,3 +15,5 @@ out/
 /bin/
 logs/
 .cache/
+refinedarchitect-test/
+refinedarchitect-test-fabric/

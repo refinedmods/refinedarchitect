@@ -13,6 +13,10 @@ buildscript {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'CurseForgeGradle'
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
@@ -20,6 +24,7 @@ buildscript {
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
         classpath 'net.minecraftforge.gradle:ForgeGradle:[6.0,6.2)'
         classpath 'fabric-loom:fabric-loom.gradle.plugin:1.2-SNAPSHOT'
+        classpath 'net.darkhax.curseforgegradle:CurseForgeGradle:1.1.15'
     }
 }
 
@@ -48,6 +53,7 @@ subprojects {
         it.options.encoding = 'UTF-8'
         it.options.release.set(17)
         it.options.deprecation = true
+        it.options.compilerArgs << "-Xmaxerrs" << "999"
     }
 
     repositories {
@@ -131,6 +137,18 @@ subprojects {
         }
     }
 
+    ext.enableCurseForgePublishing = { int projectId ->
+        task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+            apiToken = System.getenv("CURSEFORGE_TOKEN")
+            debugMode = true
+
+            def mainFile = upload(projectId, jar)
+            mainFile.releaseType = project.version.toString().contains('beta') ? 'beta' : (project.version.toString().contains('alpha') ? 'alpha' : 'release')
+            mainFile.changelog = System.getenv("RELEASE_CHANGELOG")
+            mainFile.changelogType = 'markdown'
+        }
+    }
+
     ext.commonProject = {
         apply plugin: org.spongepowered.gradle.vanilla.VanillaGradle
         minecraft {
@@ -144,7 +162,7 @@ subprojects {
         }
     }
 
-    ext.forgeProject = { String modId, Project commonProject, ArrayList apis = [], ArrayList compileApis = [] ->
+    ext.forgeProject = { String modId, Project commonProject = null, ArrayList apis = [], ArrayList compileApis = [] ->
         apply plugin: net.minecraftforge.gradle.userdev.UserDevPlugin
         minecraft {
             mappings channel: 'official', version: minecraftVersion
@@ -163,7 +181,9 @@ subprojects {
                             compileApis.collect {
                                 source(project(it).sourceSets.main)
                             }
-                            source(commonProject.sourceSets.main)
+                            if (commonProject != null) {
+                                source(commonProject.sourceSets.main)
+                            }
                         }
                     }
                 }
@@ -180,12 +200,16 @@ subprojects {
                             compileApis.collect {
                                 source(project(it).sourceSets.main)
                             }
-                            source(commonProject.sourceSets.main)
+                            if (commonProject != null) {
+                                source(commonProject.sourceSets.main)
+                            }
                         }
                     }
                 }
                 data {
-                    args '--mod', modId, '--all', '--output', commonProject.file('src/generated/resources'), "--existing", commonProject.file('src/main/resources')
+                    var destinationProject = commonProject != null ? commonProject : project
+                    var existingProject = commonProject != null ? commonProject : project
+                    args '--mod', modId, '--all', '--output', destinationProject.file('src/generated/resources'), "--existing", existingProject.file('src/main/resources')
                     ideaModule "${rootProject.name}.${project.name}.main"
                     taskName 'Data'
                 }
@@ -199,10 +223,18 @@ subprojects {
             compileApis.collect {
                 implementation project(it)
             }
-            implementation commonProject
+            if (commonProject != null) {
+                implementation commonProject
+            }
+        }
+        sourceSets {
+            main.resources.srcDirs += 'src/generated/resources'
         }
         processResources {
-            from commonProject.sourceSets.main.resources
+            if (commonProject != null) {
+                from commonProject.sourceSets.main.resources
+            }
+            from project.sourceSets.main.resources
         }
         tasks.withType(JavaCompile) {
             apis.collect {
@@ -211,12 +243,14 @@ subprojects {
             compileApis.collect {
                 source(project(it).sourceSets.main.allSource)
             }
-            source(commonProject.sourceSets.main.allSource)
+            if (commonProject != null) {
+                source(commonProject.sourceSets.main.allSource)
+            }
         }
         jar.finalizedBy('reobfJar')
     }
 
-    ext.fabricProject = { String modId, Project commonProject, ArrayList apis = [], ArrayList compileApis = [] ->
+    ext.fabricProject = { String modId, Project commonProject = null, ArrayList apis = [], ArrayList compileApis = [] ->
         repositories {
             maven {
                 name = 'Parchment'
@@ -239,16 +273,23 @@ subprojects {
             compileApis.collect {
                 implementation project(it)
             }
-            implementation commonProject
+            if (commonProject != null) {
+                implementation commonProject
+            }
         }
         processResources {
-            from commonProject.sourceSets.main.resources
+            if (commonProject != null) {
+                from commonProject.sourceSets.main.resources
+            }
+            from project.sourceSets.main.resources
         }
         tasks.withType(JavaCompile) {
             compileApis.collect {
                 source(project(it).sourceSets.main.allSource)
             }
-            source(commonProject.sourceSets.main.allSource)
+            if (commonProject != null) {
+                source(commonProject.sourceSets.main.allSource)
+            }
         }
         jar {
             from '../LICENSE.md'

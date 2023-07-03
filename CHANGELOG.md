@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   CurseForge upload support.
+
 ### Changed
 
 -   Ported to Minecraft 1.20.1
