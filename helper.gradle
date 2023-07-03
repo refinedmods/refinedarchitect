@@ -33,9 +33,7 @@ allprojects {
         mavenCentral()
     }
     apply plugin: 'jacoco'
-}
 
-subprojects {
     version = '0.0.0'
 
     if (System.getenv('GITHUB_SHA') != null) {
@@ -137,11 +135,9 @@ subprojects {
         }
     }
 
-    ext.enableCurseForgePublishing = { int projectId ->
+    ext.enableCurseForge = { int projectId ->
         task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
             apiToken = System.getenv("CURSEFORGE_TOKEN")
-            debugMode = true
-
             def mainFile = upload(projectId, jar)
             mainFile.releaseType = project.version.toString().contains('beta') ? 'beta' : (project.version.toString().contains('alpha') ? 'alpha' : 'release')
             mainFile.changelog = System.getenv("RELEASE_CHANGELOG")
