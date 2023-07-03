@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-07-03
+
 ### Added
 
 -   CurseForge upload support.
@@ -76,7 +78,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.2...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.0.0...HEAD
+
+[1.0.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.2...v1.0.0
 
 [0.4.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.4.1...v0.4.2
 
