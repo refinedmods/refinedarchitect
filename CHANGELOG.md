@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Gradle helper for single-project builds.
+
 ## [0.5.0] - 2023-07-03
 
 ### Added
