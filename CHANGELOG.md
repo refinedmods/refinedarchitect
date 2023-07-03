@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.4] - 2023-07-03
+
 ### Fixed
 
 -   Suppress Javadoc generation failures.
@@ -100,7 +102,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.3...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.4...HEAD
+
+[0.5.4]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.3...v0.5.4
 
 [0.5.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.2...v0.5.3
 
