@@ -142,6 +142,7 @@ allprojects {
             mainFile.releaseType = project.version.toString().contains('beta') ? 'beta' : (project.version.toString().contains('alpha') ? 'alpha' : 'release')
             mainFile.changelog = System.getenv("RELEASE_CHANGELOG")
             mainFile.changelogType = 'markdown'
+            mainFile.displayName = 'v' + System.getenv('RELEASE_VERSION')
         }
     }
 
