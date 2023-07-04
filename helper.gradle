@@ -331,6 +331,7 @@ tasks.register('allJavadoc', Javadoc) {
 
 // https://web.archive.org/web/20200206112725/http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
 tasks.register('codeCoverageReport', JacocoReport) {
+    dependsOn tasks.withType(Test)
     executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
     subprojects.each {
         sourceSets it.sourceSets.main
