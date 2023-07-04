@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.5] - 2023-07-04
+
+### Fixed
+
+-   Code coverage report task is now properly dependent on test task.
+
 ## [0.5.4] - 2023-07-03
 
 ### Fixed
@@ -102,7 +108,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.4...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.5...HEAD
+
+[0.5.5]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.4...v0.5.5
 
 [0.5.4]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.3...v0.5.4
 
