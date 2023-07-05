@@ -25,6 +25,7 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:[6.0,6.2)'
         classpath 'fabric-loom:fabric-loom.gradle.plugin:1.2-SNAPSHOT'
         classpath 'net.darkhax.curseforgegradle:CurseForgeGradle:1.1.15'
+        classpath 'com.modrinth.minotaur:Minotaur:2.+'
     }
 }
 
@@ -142,7 +143,20 @@ allprojects {
             mainFile.releaseType = project.version.toString().contains('beta') ? 'beta' : (project.version.toString().contains('alpha') ? 'alpha' : 'release')
             mainFile.changelog = System.getenv("RELEASE_CHANGELOG")
             mainFile.changelogType = 'markdown'
-            mainFile.displayName = 'v' + System.getenv('RELEASE_VERSION')
+            mainFile.displayName = 'v' + project.version
+        }
+    }
+
+    ext.enableModrinth = { String modrinthProjectId ->
+        apply plugin: com.modrinth.minotaur.Minotaur
+        modrinth {
+            token = System.getenv("MODRINTH_TOKEN")
+            projectId = modrinthProjectId
+            uploadFile = jar
+            versionType = project.version.toString().contains('beta') ? 'beta' : (project.version.toString().contains('alpha') ? 'alpha' : 'release')
+            versionNumber = project.version
+            versionName = 'v' + project.version
+            changelog = System.getenv("RELEASE_CHANGELOG")
         }
     }
 

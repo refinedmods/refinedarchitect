@@ -21,6 +21,10 @@ on:
         required: false
         type: boolean
         default: false
+      modrinth:
+        required: false
+        type: boolean
+        default: false
 jobs:
   extract-version-number:
     name: Extract version number
@@ -146,6 +150,23 @@ jobs:
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to CurseForge
         run: ./gradlew publishCurseForge
+
+  deploy-modrinth:
+    name: Deploy to Modrinth
+    runs-on: ubuntu-latest
+    needs: [ build, extract-version-number, extract-changelog ]
+    if: ${{ inputs.modrinth == true }}
+    env:
+      RELEASE_VERSION: ${{ needs.extract-version-number.outputs.version }}
+      RELEASE_CHANGELOG: ${{ needs.extract-changelog.outputs.changelog }}
+      MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
+      - name: Deploy to Modrinth
+        run: ./gradlew modrinth
 
   announce-discord:
     name: Announce to Discord

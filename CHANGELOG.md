@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] - 2023-07-05
+
+### Added
+
+-   Modrinth upload support.
+
 ## [0.5.5] - 2023-07-04
 
 ### Fixed
@@ -108,7 +114,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.5...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.6.0...HEAD
+
+[0.6.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.5...v0.6.0
 
 [0.5.5]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.4...v0.5.5
 
