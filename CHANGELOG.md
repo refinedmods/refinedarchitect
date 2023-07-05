@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Modrinth upload support.
+
 ## [0.5.5] - 2023-07-04
 
 ### Fixed
