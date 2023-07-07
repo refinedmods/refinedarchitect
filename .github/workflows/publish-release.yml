@@ -116,6 +116,9 @@ jobs:
         with:
           branch: gh-pages
           folder: build/docs/javadoc
+          target-folder: ${{ github.event.repository.name }}
+          token: ${{ secrets.JAVADOC_PUSH_TOKEN }}
+          repository-name: refinedmods/javadoc
 
   deploy-github-releases:
     name: Deploy to GitHub Releases

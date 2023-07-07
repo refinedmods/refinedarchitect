@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 -   Javadoc publishing is now configurable.
+-   Javadoc publishing now happens on the refinedmods/javadoc repo.
 
 ## [0.6.0] - 2023-07-05
 
