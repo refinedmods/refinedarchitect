@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Added ability to set changelog validation warning level.
+
 ## [0.7.0] - 2023-07-07
 
 ### Changed

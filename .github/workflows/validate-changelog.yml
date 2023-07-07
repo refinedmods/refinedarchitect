@@ -1,8 +1,11 @@
 name: Validate changelog
 on:
-  pull_request:
-    types: [ opened, synchronize, reopened, ready_for_review, labeled, unlabeled ]
   workflow_call:
+    inputs:
+      validation-level:
+        required: false
+        type: string
+        default: 'error'
 jobs:
   changelog:
     runs-on: ubuntu-latest
@@ -13,7 +16,7 @@ jobs:
         uses: mindsers/changelog-reader-action@v2.2.2
         with:
           path: ./CHANGELOG.md
-          validation_level: 'error'
+          validation_level: ${{ inputs.validation-level }}
       - name: Validate if changelog is updated
         uses: dangoslen/changelog-enforcer@v3
         with:
