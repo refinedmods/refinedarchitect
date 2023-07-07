@@ -1,0 +1,8 @@
+name: Validate changelog
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review, labeled, unlabeled ]
+jobs:
+  changelog:
+    uses: ./.github/workflows/validate-changelog.yml
+    secrets: inherit

@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.1] - 2023-07-07
+
+### Fixed
+
+-   Added ability to set changelog validation warning level.
+
 ## [0.7.0] - 2023-07-07
 
 ### Changed
@@ -121,7 +127,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.1...HEAD
+
+[0.7.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.0...v0.7.1
 
 [0.7.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.6.0...v0.7.0
 
