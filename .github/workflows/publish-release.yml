@@ -25,6 +25,10 @@ on:
         required: false
         type: boolean
         default: false
+      javadoc:
+        required: false
+        type: boolean
+        default: true
 jobs:
   extract-version-number:
     name: Extract version number
@@ -97,6 +101,7 @@ jobs:
     name: Publish Javadoc
     runs-on: ubuntu-latest
     needs: [ build, extract-version-number ]
+    if: ${{ inputs.javadoc == true }}
     env:
       RELEASE_VERSION: ${{ needs.extract-version-number.outputs.version }}
     steps:
@@ -111,6 +116,9 @@ jobs:
         with:
           branch: gh-pages
           folder: build/docs/javadoc
+          target-folder: ${{ github.event.repository.name }}
+          token: ${{ secrets.JAVADOC_PUSH_TOKEN }}
+          repository-name: refinedmods/javadoc
 
   deploy-github-releases:
     name: Deploy to GitHub Releases

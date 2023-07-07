@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.0] - 2023-07-07
+
+### Changed
+
+-   Javadoc publishing is now configurable.
+-   Javadoc publishing now happens on the refinedmods/javadoc repo.
+
 ## [0.6.0] - 2023-07-05
 
 ### Added
@@ -114,7 +121,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.0...HEAD
+
+[0.7.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.6.0...v0.7.0
 
 [0.6.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.5.5...v0.6.0
 
