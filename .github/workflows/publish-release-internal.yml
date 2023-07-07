@@ -13,3 +13,4 @@ jobs:
       mutation-testing: false
       project-name: 'Refined Architect'
       announce: false
+      javadoc: false
