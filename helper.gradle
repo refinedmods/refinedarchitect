@@ -93,8 +93,8 @@ allprojects {
     ext.enableMutationTesting = {
         apply plugin: info.solidsoft.gradle.pitest.PitestPlugin
         pitest {
-            junit5PluginVersion = "1.2.0"
-            pitestVersion = "1.14.4"
+            junit5PluginVersion = "1.1.2"
+            pitestVersion = "1.10.4"
             outputFormats.set(['HTML'])
             mutationThreshold.set(90)
             coverageThreshold.set(80)
