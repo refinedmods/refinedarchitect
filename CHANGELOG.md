@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.8.0] - 2023-08-20
+
 ### Added
 
 -   The Forge helpers now use NeoForge instead of Forge.
@@ -135,7 +137,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.8.0...HEAD
+
+[0.8.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.1...v0.8.0
 
 [0.7.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.7.0...v0.7.1
 
