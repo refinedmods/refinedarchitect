@@ -13,7 +13,7 @@ catalog {
         def apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
-        def junit5 = version("junit5", "5.9.3")
+        def junit5 = version("junit5", "5.10.0")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
         library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit5)
@@ -21,10 +21,10 @@ catalog {
         def assertJ = version("assertJ", "3.24.2")
         library("assertj", "org.assertj", "assertj-core").versionRef(assertJ)
 
-        def mockito = version("mockito", "5.3.1")
+        def mockito = version("mockito", "5.4.0")
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
-        def equalsVerifier = version("equalsverifier", "3.14.1")
+        def equalsVerifier = version("equalsverifier", "3.15.1")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
     }
 }

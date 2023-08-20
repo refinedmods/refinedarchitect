@@ -7,6 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   The Forge helpers now use NeoForge instead of Forge.
+
+### Changed
+
+-   Bumped various library versions.
+
 ## [0.7.1] - 2023-07-07
 
 ### Fixed
