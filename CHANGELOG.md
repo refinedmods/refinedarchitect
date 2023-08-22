@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.8.2] - 2023-08-22
+
+### Fixed
+
+-   Fixed more Pitest compatibility issues.
+
 ## [0.8.1] - 2023-08-20
 
 ### Fixed
@@ -143,7 +149,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.8.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.8.2...HEAD
+
+[0.8.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.8.1...v0.8.2
 
 [0.8.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.8.0...v0.8.1
 
