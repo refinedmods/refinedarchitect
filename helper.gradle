@@ -202,6 +202,8 @@ allprojects {
                             }
                         }
                     }
+                    property 'mixin.env.remapRefMap', 'true'
+                    property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
                 }
                 server {
                     workingDirectory project.file('run')
@@ -221,6 +223,8 @@ allprojects {
                             }
                         }
                     }
+                    property 'mixin.env.remapRefMap', 'true'
+                    property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
                 }
                 data {
                     var destinationProject = commonProject != null ? commonProject : project
