@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Mixin support for data generation on Forge.
+
 ## [0.9.0] - 2023-09-02
 
 ### Added
