@@ -232,6 +232,8 @@ allprojects {
                     args '--mod', modId, '--all', '--output', destinationProject.file('src/generated/resources'), "--existing", existingProject.file('src/main/resources')
                     ideaModule "${rootProject.name}.${project.name}.main"
                     taskName 'Data'
+                    property 'mixin.env.remapRefMap', 'true'
+                    property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
                 }
             }
         }
