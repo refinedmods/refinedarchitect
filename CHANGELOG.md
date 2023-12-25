@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Upgraded GitHub Actions versions.
+
 ## [0.9.1] - 2023-10-31
 
 ### Fixed

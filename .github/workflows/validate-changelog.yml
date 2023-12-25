@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Validate if changelog is valid
-        uses: mindsers/changelog-reader-action@v2.2.2
+        uses: mindsers/changelog-reader-action@v2
         with:
           path: ./CHANGELOG.md
           validation_level: ${{ inputs.validation-level }}
