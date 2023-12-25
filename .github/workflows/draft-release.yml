@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITFLOW_PUSH_TOKEN }}
       - name: Get latest version from changelog
@@ -42,11 +42,11 @@ jobs:
           path: ./CHANGELOG.md
       - name: Get version number to release (Semver)
         if: ${{ github.event.inputs.version-number-override == '' }}
-        uses: actions-ecosystem/action-bump-semver@v1
+        uses: cbrgm/semver-bump-action@v1
         id: bump-semver
         with:
-          current_version: ${{ steps.changelog.outputs.version }}
-          level: ${{ github.event.inputs.release-type }}
+          current-version: ${{ steps.changelog.outputs.version }}
+          bump-level: ${{ github.event.inputs.release-type }}
       - name: Assign version number to release (Semver)
         if: ${{ github.event.inputs.version-number-override == '' }}
         run: |
@@ -56,7 +56,7 @@ jobs:
         run: |
           echo "VERSION=${{ github.event.inputs.version-number-override }}" >> $GITHUB_ENV
       - name: Update changelog
-        uses: thomaseizinger/keep-a-changelog-new-release@1.3.0
+        uses: thomaseizinger/keep-a-changelog-new-release@ec0871fec381db64ab389886ffe8e6fc2b661e2c
         with:
           version: ${{ env.VERSION }}
           tag: v${{ env.VERSION }}
@@ -69,7 +69,7 @@ jobs:
           new_branch: 'release/${{ env.VERSION }}'
           push: true
       - name: Create pull request for release
-        uses: thomaseizinger/create-pull-request@1.3.0
+        uses: thomaseizinger/create-pull-request@52baa147b387effeeb9cf04e121227dbfb74994e
         env:
           GITHUB_TOKEN: ${{ secrets.GITFLOW_PUSH_TOKEN }}
         with:

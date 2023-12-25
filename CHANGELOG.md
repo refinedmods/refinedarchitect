@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.10.0] - 2023-12-25
+
+### Changed
+
+-   Upgraded GitHub Actions versions.
+
 ## [0.9.1] - 2023-10-31
 
 ### Fixed
@@ -161,7 +167,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.9.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.10.0...HEAD
+
+[0.10.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.9.1...v0.10.0
 
 [0.9.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.9.0...v0.9.1
 
