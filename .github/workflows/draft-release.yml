@@ -42,11 +42,11 @@ jobs:
           path: ./CHANGELOG.md
       - name: Get version number to release (Semver)
         if: ${{ github.event.inputs.version-number-override == '' }}
-        uses: actions-ecosystem/action-bump-semver@v1
+        uses: cbrgm/semver-bump-action@v1
         id: bump-semver
         with:
-          current_version: ${{ steps.changelog.outputs.version }}
-          level: ${{ github.event.inputs.release-type }}
+          current-version: ${{ steps.changelog.outputs.version }}
+          bump-level: ${{ github.event.inputs.release-type }}
       - name: Assign version number to release (Semver)
         if: ${{ github.event.inputs.version-number-override == '' }}
         run: |
