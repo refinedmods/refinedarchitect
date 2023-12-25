@@ -39,7 +39,7 @@ jobs:
       version: ${{ env.RELEASE_VERSION }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Extract version from release branch name
         if: startsWith(github.event.pull_request.head.ref, 'release/')
         run: |
@@ -61,10 +61,10 @@ jobs:
       changelog: ${{ steps.changelog_reader.outputs.changes }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Extract changelog
         id: changelog_reader
-        uses: mindsers/changelog-reader-action@v2.2.2
+        uses: mindsers/changelog-reader-action@v2
         with:
           version: ${{ needs.extract-version-number.outputs.version }}
           path: ./CHANGELOG.md
@@ -87,7 +87,7 @@ jobs:
       RELEASE_VERSION: ${{ needs.extract-version-number.outputs.version }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Publish to Maven
@@ -106,13 +106,13 @@ jobs:
       RELEASE_VERSION: ${{ needs.extract-version-number.outputs.version }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Build documentation
         run: ./gradlew allJavadoc
       - name: Publish documentation
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: build/docs/javadoc
@@ -128,7 +128,7 @@ jobs:
       release-url: ${{ steps.gh_release.outputs.url }}
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: Artifacts
       - name: Deploy to GitHub Releases
@@ -153,7 +153,7 @@ jobs:
       CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to CurseForge
@@ -170,7 +170,7 @@ jobs:
       MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to Modrinth
@@ -200,7 +200,7 @@ jobs:
     if: ${{ inputs.announce == true }}
     steps:
       - name: Announce to Mastodon
-        uses: rzr/fediverse-action@master
+        uses: rzr/fediverse-action@8506cb8a3052fd34b0d93a244888a81c233abf88
         with:
           access-token: ${{ secrets.MASTODON_TOKEN }}
           host: 'anvil.social'
@@ -213,7 +213,7 @@ jobs:
       (startsWith(github.event.pull_request.head.ref, 'release/') || startsWith(github.event.pull_request.head.ref, 'hotfix/'))
     steps:
       - name: Create PR for merging main back into develop
-        uses: thomaseizinger/create-pull-request@1.0.0
+        uses: thomaseizinger/create-pull-request@52baa147b387effeeb9cf04e121227dbfb74994e
         env:
           GITHUB_TOKEN: ${{ secrets.GITFLOW_PUSH_TOKEN }}
         with:
