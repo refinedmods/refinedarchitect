@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.11.0] - 2024-01-28
+
+### Changed
+
+-   Ported to Minecraft 1.20.4.
+
 ## [0.10.0] - 2023-12-25
 
 ### Changed
@@ -167,7 +173,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.0...HEAD
+
+[0.11.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.10.0...v0.11.0
 
 [0.10.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.9.1...v0.10.0
 
