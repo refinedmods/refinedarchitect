@@ -85,10 +85,9 @@ allprojects {
         jeiVersion = "17.2.0.41"
         // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
         reiVersion = "14.0.688"
-        // TODO
-        architecturyVersion = "8.1.73" // dependency of rei
+        architecturyVersion = "11.0.9" // dependency of rei
         clothMathVersion = "0.6.1" // dependency of rei
-        clothConfigVersion = "10.0.96" // dependency of rei
+        clothConfigVersion = "13.0.121" // dependency of rei
     }
 
     ext.enableMutationTesting = {
