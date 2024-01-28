@@ -105,6 +105,11 @@ allprojects {
             mutationThreshold.set(90)
             coverageThreshold.set(80)
         }
+        dependencies {
+            testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
+                because("required for pitest")
+            }
+        }
     }
 
     ext.enableJavadoc = {
