@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Pitest and JUnit incompatibility.
+
 ## [0.11.2] - 2024-01-28
 
 ### Fixed
