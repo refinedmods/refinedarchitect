@@ -15,5 +15,6 @@ out/
 /bin/
 logs/
 .cache/
-refinedarchitect-test/
+refinedarchitect-test-forge/
 refinedarchitect-test-fabric/
+refinedarchitect-test-common/
