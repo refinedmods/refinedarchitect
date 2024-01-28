@@ -7,6 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   NeoForge JEI version.
+-   Cloth Config version.
+
 ## [0.11.0] - 2024-01-28
 
 ### Changed
