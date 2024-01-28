@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-  Checkstyle incompatibility with Guava.
+
 ## [0.11.1] - 2024-01-28
 
 ### Fixed
