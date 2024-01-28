@@ -4,8 +4,8 @@ plugins {
 
 catalog {
     versionCatalog {
-        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-forge-api").version(jeiVersion)
-        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-forge").version(jeiVersion)
+        library("jei-api", "mezz.jei", "jei-${minecraftVersion}-neoforge-api").version(jeiVersion)
+        library("jei-impl", "mezz.jei", "jei-${minecraftVersion}-neoforge").version(jeiVersion)
 
         library("rei-impl", "me.shedaniel", "RoughlyEnoughItems-forge").version(reiVersion)
         library("rei-architectury", "dev.architectury", "architectury-forge").version(architecturyVersion)
