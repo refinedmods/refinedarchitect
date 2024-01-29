@@ -24,7 +24,7 @@ buildscript {
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
         classpath 'net.neoforged.gradle:userdev:7.0.80'
         classpath 'fabric-loom:fabric-loom.gradle.plugin:1.5-SNAPSHOT'
-        classpath 'net.darkhax.curseforgegradle:CurseForgeGradle:1.1.15'
+        classpath 'net.darkhax.curseforgegradle:CurseForgeGradle:1.1.18'
         classpath 'com.modrinth.minotaur:Minotaur:2.+'
     }
 }
