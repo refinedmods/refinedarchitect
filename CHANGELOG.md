@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Updated CurseForge plugin to properly detect NeoForge.
+
 ## [0.11.3] - 2024-01-28
 
 ### Fixed
