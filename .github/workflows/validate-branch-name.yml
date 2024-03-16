@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validate if branch name is valid
-        if: (!startsWith(github.event.pull_request.head.ref, 'release/')) && (!startsWith(github.event.pull_request.head.ref, 'hotfix/'))
+        if: (!startsWith(github.event.pull_request.head.ref, 'release/')) && (!startsWith(github.event.pull_request.head.ref, 'hotfix/')) && github.event.pull_request.head.ref != 'crowdin-translations'
         uses: deepakputhraya/action-branch-name@5f1cc199284b75145ec2d13434422e6987cf6af8
         with:
           regex: '^([a-z])+\/GH-\d*\/([a-z-])+$'
