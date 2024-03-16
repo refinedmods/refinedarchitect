@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.11.5] - 2024-03-16
+
 ### Fixed
 
 -   Branch name validation for Crowdin translation branches no longer fails.
@@ -202,7 +204,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.4...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.5...HEAD
+
+[0.11.5]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.4...v0.11.5
 
 [0.11.4]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.3...v0.11.4
 
