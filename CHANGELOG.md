@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Branch name validation for Crowdin translation branches no longer fails.
+
 ## [0.11.4] - 2024-01-29
 
 ### Fixed
