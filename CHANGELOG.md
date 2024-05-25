@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 -   Updated Gradle.
+-   Include NeoForge testframework.
 
 ## [0.12.0] - 2024-05-25
 
