@@ -22,8 +22,8 @@ buildscript {
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373'
         classpath 'org.spongepowered:vanillagradle:0.2.1-SNAPSHOT'
-        classpath 'net.neoforged.gradle:userdev:7.0.80'
-        classpath 'fabric-loom:fabric-loom.gradle.plugin:1.5-SNAPSHOT'
+        classpath 'net.neoforged.gradle:userdev:7.0.134'
+        classpath 'fabric-loom:fabric-loom.gradle.plugin:1.6-SNAPSHOT'
         classpath 'net.darkhax.curseforgegradle:CurseForgeGradle:1.1.18'
         classpath 'com.modrinth.minotaur:Minotaur:2.+'
     }
@@ -84,13 +84,13 @@ allprojects {
 
     ext {
         minecraftVersion = "1.20.4"
-        forgeVersion = "20.4.137-beta"
-        fabricLoaderVersion = "0.15.6"
-        fabricApiVersion = "0.95.1+1.20.4"
+        forgeVersion = "20.4.234"
+        fabricLoaderVersion = "0.15.11"
+        fabricApiVersion = "0.97.0+1.20.4"
         // https://www.curseforge.com/minecraft/mc-mods/jei/files
-        jeiVersion = "17.2.0.41"
+        jeiVersion = "17.3.0.52"
         // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
-        reiVersion = "14.0.688"
+        reiVersion = "14.1.727"
         architecturyVersion = "11.0.9" // dependency of rei
         clothMathVersion = "0.6.1" // dependency of rei
         clothConfigVersion = "13.0.121" // dependency of rei
@@ -212,6 +212,7 @@ allprojects {
         }
         dependencies {
             implementation "net.neoforged:neoforge:${forgeVersion}"
+            testImplementation "net.neoforged:testframework:${forgeVersion}"
             apis.collect {
                 implementation project(it)
             }
