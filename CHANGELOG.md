@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Updated Gradle.
+
 ## [0.12.0] - 2024-05-25
 
 ### Added
