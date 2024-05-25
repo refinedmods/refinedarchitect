@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.12.0] - 2024-05-25
+
 ### Added
 
 -   Support for NeoForge gametests.
@@ -208,7 +210,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.5...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.12.0...HEAD
+
+[0.12.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.5...v0.12.0
 
 [0.11.5]: https://github.com/refinedmods/refinedarchitect/compare/v0.11.4...v0.11.5
 
