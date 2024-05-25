@@ -13,6 +13,10 @@ on:
         required: false
         type: boolean
         default: ${{ !github.event.pull_request.head.repo.fork }}
+      gametests:
+        required: false
+        type: boolean
+        default: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,6 +41,11 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
       - name: Build and test
         run: ./gradlew build codeCoverageReport
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Gametests
+        if: ${{ inputs.gametests == true }}
+        run: ./gradlew runGameTestServer
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Analyze
