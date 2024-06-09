@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Invalid version ref for cloth config.
+
 ## [0.13.0] - 2024-06-09
 
 ### Changed

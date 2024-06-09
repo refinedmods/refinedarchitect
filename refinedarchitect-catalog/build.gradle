@@ -29,7 +29,7 @@ catalog {
 
         // https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
         def clothConfig = version("clothconfig", "13.0.121")
-        library("cloth-config", "me.shedaniel.cloth", "cloth-config").version(clothConfig)
+        library("cloth-config", "me.shedaniel.cloth", "cloth-config").versionRef(clothConfig)
 
         // https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
         def energy = version("teamreborn-energy", "3.0.0")
