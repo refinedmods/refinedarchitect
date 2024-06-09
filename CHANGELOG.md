@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Use Cloth Config for Fabric.
+
 ## [0.13.1] - 2024-06-09
 
 ### Fixed

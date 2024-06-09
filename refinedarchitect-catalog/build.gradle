@@ -28,8 +28,8 @@ catalog {
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
-        def clothConfig = version("clothconfig", "13.0.121")
-        library("cloth-config", "me.shedaniel.cloth", "cloth-config").versionRef(clothConfig)
+        def clothConfig = version("cloth-config-fabric", "13.0.121")
+        library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
         // https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
         def energy = version("teamreborn-energy", "3.0.0")
