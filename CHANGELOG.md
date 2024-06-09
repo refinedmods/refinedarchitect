@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.13.2] - 2024-06-09
+
+### Fixed
+
+-   Use Cloth Config for Fabric.
+
 ## [0.13.1] - 2024-06-09
 
 ### Fixed
@@ -229,7 +235,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.2...HEAD
+
+[0.13.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.1...v0.13.2
 
 [0.13.1]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.0...v0.13.1
 
