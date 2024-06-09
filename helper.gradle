@@ -87,13 +87,6 @@ allprojects {
         forgeVersion = "20.4.234"
         fabricLoaderVersion = "0.15.11"
         fabricApiVersion = "0.97.0+1.20.4"
-        // https://www.curseforge.com/minecraft/mc-mods/jei/files
-        jeiVersion = "17.3.0.52"
-        // https://www.curseforge.com/minecraft/mc-mods/roughly-enough-items/files
-        reiVersion = "14.1.727"
-        architecturyVersion = "11.0.9" // dependency of rei
-        clothMathVersion = "0.6.1" // dependency of rei
-        clothConfigVersion = "13.0.121" // dependency of rei
     }
 
     ext.enableMutationTesting = {
