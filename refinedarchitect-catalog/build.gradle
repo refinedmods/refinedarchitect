@@ -26,6 +26,18 @@ catalog {
 
         def equalsVerifier = version("equalsverifier", "3.15.5")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
+
+        // https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
+        def clothConfig = version("clothconfig", "13.0.121")
+        library("cloth-config", "me.shedaniel.cloth", "cloth-config").version(clothConfig)
+
+        // https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
+        def energy = version("teamreborn-energy", "3.0.0")
+        library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
+
+        // https://modrinth.com/mod/modmenu
+        def modmenu = version("modmenu", "9.0.0")
+        library("modmenu", "com.terraformersmc", "modmenu").versionRef(modmenu)
     }
 }
 
