@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Removed Fabric, Forge and common version catalogs.
+
 ## [0.12.1] - 2024-05-25
 
 ### Fixed

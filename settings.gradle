@@ -1,6 +1,2 @@
 rootProject.name = 'refinedarchitect'
-
 include 'refinedarchitect-catalog'
-include 'refinedarchitect-catalog-platform-common'
-include 'refinedarchitect-catalog-platform-fabric'
-include 'refinedarchitect-catalog-platform-forge'
