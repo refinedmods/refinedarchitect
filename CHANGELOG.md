@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.13.3] - 2024-06-15
+
+### Fixed
+
+-   Declare Fabric APIs and common project as API instead of implementation.
+
 ## [0.13.2] - 2024-06-09
 
 ### Fixed
@@ -235,7 +241,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.2...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.3...HEAD
+
+[0.13.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.2...v0.13.3
 
 [0.13.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.13.1...v0.13.2
 
