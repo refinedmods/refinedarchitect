@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Declare Fabric APIs and common project as API instead of implementation.
+
 ## [0.13.3] - 2024-06-15
 
 ### Fixed

@@ -262,7 +262,7 @@ allprojects {
                 api project(it)
             }
             if (commonProject != null) {
-                modApi commonProject
+                api commonProject
             }
         }
         processResources {
