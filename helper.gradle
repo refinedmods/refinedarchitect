@@ -255,14 +255,14 @@ allprojects {
             modImplementation "net.fabricmc:fabric-loader:${fabricLoaderVersion}"
             modImplementation "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
             apis.collect {
-                implementation project(it)
+                api project(it)
                 include project(it)
             }
             compileApis.collect {
-                implementation project(it)
+                api project(it)
             }
             if (commonProject != null) {
-                implementation commonProject
+                modApi commonProject
             }
         }
         processResources {
