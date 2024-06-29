@@ -84,7 +84,7 @@ allprojects {
 
     ext {
         minecraftVersion = "1.21"
-        forgeVersion = "21.0.42"
+        forgeVersion = "21.0.42-beta"
         fabricLoaderVersion = "0.15.11"
         fabricApiVersion = "0.100.4+1.21"
     }
