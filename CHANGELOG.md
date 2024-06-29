@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Wrong Slf4j version.
+
 ## [0.14.1] - 2024-06-29
 
 ### Fixed
