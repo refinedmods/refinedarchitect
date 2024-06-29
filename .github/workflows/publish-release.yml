@@ -29,6 +29,10 @@ on:
         required: false
         type: boolean
         default: true
+      gametests:
+        required: false
+        type: boolean
+        default: false
 jobs:
   extract-version-number:
     name: Extract version number
@@ -77,6 +81,7 @@ jobs:
       version: ${{ needs.extract-version-number.outputs.version }}
       mutation-testing: ${{ inputs.mutation-testing }}
       sonarqube: ${{ inputs.sonarqube }}
+      gametests: ${{ inputs.gametests }}
     secrets: inherit
 
   publish-maven:
