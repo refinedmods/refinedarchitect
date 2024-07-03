@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fix problem where code coverage report couldn't be generated.
+
 ## [0.14.2] - 2024-06-29
 
 ### Fixed

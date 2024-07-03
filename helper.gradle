@@ -319,22 +319,18 @@ tasks.register('allJavadoc', Javadoc) {
     destinationDir = file("build/docs/javadoc")
 }
 
-// https://web.archive.org/web/20200206112725/http://csiebler.github.io/blog/2014/02/09/multi-project-code-coverage-using-gradle-and-jacoco/
 tasks.register('codeCoverageReport', JacocoReport) {
-    dependsOn tasks.withType(Test)
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
     subprojects.each {
         sourceSets it.sourceSets.main
+        it.tasks.withType(Test).each {
+            executionData it
+            dependsOn it
+        }
     }
     reports {
         html.required = true
         xml.required = true
     }
-}
-
-// always run the tests before generating the report
-codeCoverageReport.dependsOn {
-    subprojects*.test
 }
 
 ext.enableSonarQube = (String projectKey, String organization = "refinedmods") -> {
