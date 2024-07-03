@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.14.3] - 2024-07-03
+
+### Fixed
+
+-   Fix problem where code coverage report couldn't be generated.
+
 ## [0.14.2] - 2024-06-29
 
 ### Fixed
@@ -265,7 +271,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.2...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.3...HEAD
+
+[0.14.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.2...v0.14.3
 
 [0.14.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.1...v0.14.2
 
