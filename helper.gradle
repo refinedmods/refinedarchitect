@@ -334,6 +334,7 @@ tasks.register('codeCoverageReport', JacocoReport) {
 }
 
 ext.enableSonarQube = (String projectKey, String organization = "refinedmods") -> {
+    System.setProperty("sonar.gradle.skipCompile", "true")
     apply plugin: org.sonarqube.gradle.SonarQubePlugin
     // https://docs.sonarqube.org/latest/analysis/github-integration/
     sonarqube {
