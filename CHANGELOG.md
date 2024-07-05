@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Switched from NeoGradle to ModDevGradle.
+-   Upgrade cache and Gradle wrapper validation actions.
+-   Disable implicit compilation in Sonar Gradle plugin.
+
 ## [0.14.3] - 2024-07-03
 
 ### Fixed
