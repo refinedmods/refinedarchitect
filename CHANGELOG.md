@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.15.0] - 2024-07-05
+
 ### Changed
 
 -   Switched from NeoGradle to ModDevGradle.
@@ -277,7 +279,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.3...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.0...HEAD
+
+[0.15.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.3...v0.15.0
 
 [0.14.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.14.2...v0.14.3
 
