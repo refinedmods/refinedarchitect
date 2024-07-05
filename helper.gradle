@@ -86,7 +86,7 @@ allprojects {
         minecraftVersion = "1.21"
         // See: https://projects.neoforged.net/neoforged/neoform
         neoFormVersion = "1.21-20240613.152323"
-        forgeVersion = "21.0.42-beta"
+        neoForgeVersion = "21.0.42-beta"
         fabricLoaderVersion = "0.15.11"
         fabricApiVersion = "0.100.4+1.21"
     }
@@ -180,11 +180,11 @@ allprojects {
         }
     }
 
-    ext.forgeProject = { String modId, Project commonProject = null, ArrayList apis = [], ArrayList compileApis = [] ->
+    ext.neoForgeProject = { String modId, Project commonProject = null, ArrayList apis = [], ArrayList compileApis = [] ->
         apply plugin : net.neoforged.moddevgradle.boot.ModDevPlugin
 
         neoForge {
-            version = forgeVersion
+            version = neoForgeVersion
             // The test source set does not inherit any "local" dependencies of main
             // this ensures Minecraft classes are available to it.
             addModdingDependenciesTo(project.sourceSets.test)
@@ -226,7 +226,7 @@ allprojects {
             }
         }
         dependencies {
-            testImplementation "net.neoforged:testframework:${forgeVersion}"
+            testImplementation "net.neoforged:testframework:${neoForgeVersion}"
             apis.collect {
                 compileOnly project(it)
                 testCompileOnly project(it)

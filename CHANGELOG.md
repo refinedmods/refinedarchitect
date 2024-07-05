@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Renamed `forgeProject` to `neoForgeProject`.
+
 ## [0.15.0] - 2024-07-05
 
 ### Changed
