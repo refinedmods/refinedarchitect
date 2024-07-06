@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.15.3] - 2024-07-06
+
 ### Fixed
 
 -   Updated NeoForge to 21.0.61-beta.
@@ -295,7 +297,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.2...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.3...HEAD
+
+[0.15.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.2...v0.15.3
 
 [0.15.2]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.1...v0.15.2
 
