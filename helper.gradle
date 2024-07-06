@@ -86,7 +86,7 @@ allprojects {
         minecraftVersion = "1.21"
         // See: https://projects.neoforged.net/neoforged/neoform
         neoFormVersion = "1.21-20240613.152323"
-        neoForgeVersion = "21.0.42-beta"
+        neoForgeVersion = "21.0.61-beta"
         fabricLoaderVersion = "0.15.11"
         fabricApiVersion = "0.100.4+1.21"
     }
