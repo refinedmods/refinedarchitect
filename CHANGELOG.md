@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fixed remapping issue in Fabric dev environment for consumers of the Fabric project artifact.
+
 ## [0.15.1] - 2024-07-05
 
 ### Fixed

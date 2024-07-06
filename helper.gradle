@@ -279,10 +279,10 @@ allprojects {
                 include project(it)
             }
             compileApis.collect {
-                api project(it)
+                compileOnly project(it)
             }
             if (commonProject != null) {
-                api commonProject
+                compileOnly commonProject
             }
         }
         processResources {
