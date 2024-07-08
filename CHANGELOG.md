@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.16.0] - 2024-07-08
+
+### Added
+
+-   Replaced the `helper.gradle` file with a Gradle convention plugin.
+-   Support for Parchment.
+
 ## [0.15.3] - 2024-07-06
 
 ### Fixed
@@ -297,7 +304,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.3...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.0...HEAD
+
+[0.16.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.3...v0.16.0
 
 [0.15.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.15.2...v0.15.3
 

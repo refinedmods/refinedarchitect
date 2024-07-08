@@ -40,7 +40,7 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Build and test
-        run: ./gradlew build codeCoverageReport
+        run: ./gradlew build codeCoverageReportAggregate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Gametests
