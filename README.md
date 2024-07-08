@@ -4,7 +4,7 @@
 
 Refined Architect is a project that is used by all the mods of Refined Mods.
 
-It contains GitHub workflows, version management and Gradle helpers to help making (cross-platform) mods easier.
+It contains GitHub workflows, version management and a Gradle convention plugin to help making (cross-platform) mods easier.
 
 See [refinedarchitect-template](https://github.com/refinedmods/refinedarchitect-template) for an example.
 

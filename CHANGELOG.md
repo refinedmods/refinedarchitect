@@ -7,6 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Replaced the `helper.gradle` file with a Gradle convention plugin.
+-   Support for Parchment.
+
 ## [0.15.3] - 2024-07-06
 
 ### Fixed
