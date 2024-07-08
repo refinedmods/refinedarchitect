@@ -115,7 +115,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Build documentation
-        run: ./gradlew allJavadoc
+        run: ./gradlew javadocAggregate
       - name: Publish documentation
         uses: JamesIves/github-pages-deploy-action@v4
         with:
