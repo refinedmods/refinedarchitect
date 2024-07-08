@@ -44,13 +44,5 @@ publishing {
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
-        maven {
-            name = "CreeperHost"
-            url = project.uri("https://maven.creeperhost.net/release")
-            credentials {
-                username = System.getenv("CREEPERHOST_MAVEN_USERNAME")
-                password = System.getenv("CREEPERHOST_MAVEN_TOKEN")
-            }
-        }
     }
 }
