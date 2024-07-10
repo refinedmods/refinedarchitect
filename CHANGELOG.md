@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.16.4] - 2024-07-10
+
 ### Fixed
 
 -   The root plugin no longer registers an extension. Apply `refinedarchitect.base` to get the `refinedarchitect` extension.
@@ -318,7 +320,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.3...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.4...HEAD
+
+[0.16.4]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.3...v0.16.4
 
 [0.16.3]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.2...v0.16.3
 
