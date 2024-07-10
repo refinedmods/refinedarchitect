@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   The root plugin no longer registers an extension. Apply `refinedarchitect.base` to get the `refinedarchitect` extension.
+
 ## [0.16.3] - 2024-07-10
 
 ### Fixed
