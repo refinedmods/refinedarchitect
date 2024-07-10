@@ -1,4 +1,4 @@
-# Refined Architect [![Build Status](https://github.com/refinedmods/refinedarchitect/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/refinedmods/refinedarchitect/actions/workflows/build.yml) [![Discord](https://img.shields.io/discord/342942776494653441)](https://discordapp.com/invite/VYzsydb) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+# Refined Architect [![Build Status](https://github.com/refinedmods/refinedarchitect/actions/workflows/build-internal.yml/badge.svg?branch=develop)](https://github.com/refinedmods/refinedarchitect/actions/workflows/build-internal.yml) [![Discord](https://img.shields.io/discord/342942776494653441)](https://discordapp.com/invite/VYzsydb) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 ## About
 
