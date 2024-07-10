@@ -26,4 +26,4 @@ tasks.register<JacocoReport>("codeCoverageReportAggregate") {
     }
 }
 
-project.extensions.create("refinedarchitect", RootExtension::class, project)
+project.extensions.create("refinedarchitect", BaseExtension::class, project)

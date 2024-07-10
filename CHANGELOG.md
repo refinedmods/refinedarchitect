@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   The `sonarQube` function is now available in each plugin instead of only on the root plugin.
+
 ## [0.16.2] - 2024-07-08
 
 ## [0.16.1] - 2024-07-08

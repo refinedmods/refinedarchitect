@@ -9,6 +9,8 @@ import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.*
+import org.sonarqube.gradle.SonarExtension
+import org.sonarqube.gradle.SonarQubePlugin
 
 class PublishingOptions {
     var maven: Boolean? = false
@@ -116,6 +118,20 @@ open class BaseExtension(private val project: Project) {
                 create<MavenPublication>("mavenJava") {
                     from(project.components["java"])
                 }
+            }
+        }
+    }
+
+    fun sonarQube(projectKey: String, organization: String = "refinedmods") {
+        System.setProperty("sonar.gradle.skipCompile", "true")
+        project.plugins.apply(SonarQubePlugin::class.java)
+        project.extensions.getByType<SonarExtension>().apply {
+            // https://docs.sonarqube.org/latest/analysis/github-integration/
+            properties {
+                property("sonar.projectKey", projectKey)
+                property("sonar.organization", organization)
+                property("sonar.host.url", "https://sonarcloud.io")
+                property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory.get()}/reports/jacoco/codeCoverageReport/codeCoverageReport.xml")
             }
         }
     }
