@@ -25,5 +25,3 @@ tasks.register<JacocoReport>("codeCoverageReportAggregate") {
         xml.required.set(true)
     }
 }
-
-project.extensions.create("refinedarchitect", BaseExtension::class, project)
