@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fixed the code coverage report path.
+
 ## [0.16.5] - 2024-07-14
 
 ### Fixed

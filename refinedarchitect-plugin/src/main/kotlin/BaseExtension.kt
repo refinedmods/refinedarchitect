@@ -131,7 +131,7 @@ open class BaseExtension(private val project: Project) {
                 property("sonar.projectKey", projectKey)
                 property("sonar.organization", organization)
                 property("sonar.host.url", "https://sonarcloud.io")
-                property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory.get()}/reports/jacoco/codeCoverageReport/codeCoverageReport.xml")
+                property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory.get()}/reports/jacoco/codeCoverageReportAggregate/codeCoverageReportAggregate.xml")
             }
         }
     }
