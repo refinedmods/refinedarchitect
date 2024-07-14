@@ -4,6 +4,23 @@ When contributing to this repository, please first discuss the change you wish t
 [GitHub issues](https://github.com/refinedmods/refinedarchitect/issues), [Discord](https://discordapp.com/invite/VYzsydb),
 or any other method with the owners of this repository before making a change.
 
+## Quickstart
+
+These are the most important things to know before contributing (also explained in more detail later in this document):
+
+- Commit messages must adhere to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- Branch names must be formatted correctly. The format is `{category}/GH-{issue number}/{lowercase-description}`. You
+  can also use `NO-ISSUE` instead of a GitHub issue number.
+  Category must match a
+  category [used in our Commitlint config](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum).
+  You can also use `NO-ISSUE` instead of a GitHub issue number.
+- We use [Checkstyle](https://checkstyle.sourceforge.io/) in our build workflow to validate coding style. It is
+  recommended to import the [config/checkstyle/checkstyle.xml](../config/checkstyle/checkstyle.xml)
+  or [config/intellij-code-style.xml](../config/intellij-code-style.xml) file into your
+  IDE, so that formatting rules are respected.
+- Branches are kept up to date by rebasing, not by merging.
+- For non-technical changes, adding a changelog entry is required.
+
 ## Pull requests
 
 - Keep your pull request (PR) as small as possible, this makes reviewing easier.
