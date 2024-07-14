@@ -8,7 +8,7 @@ jobs:
         if: (!startsWith(github.event.pull_request.head.ref, 'release/')) && (!startsWith(github.event.pull_request.head.ref, 'hotfix/')) && github.event.pull_request.head.ref != 'crowdin-translations'
         uses: deepakputhraya/action-branch-name@5f1cc199284b75145ec2d13434422e6987cf6af8
         with:
-          regex: '^([a-z])+\/GH-\d*\/([a-z-])+$'
+          regex: '^([a-z])+\/(GH-\d*|NO-ISSUE)\/([a-z-])+$'
           allowed_prefixes: 'build,chore,ci,docs,feat,fix,perf,refactor,revert,style,test'
           ignore: main,develop
           min_length: 5

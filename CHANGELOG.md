@@ -7,6 +7,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.16.5] - 2024-07-14
+
+### Fixed
+
+-   The `validate-branch-name` action now allows `NO-ISSUE` instead of a `GH-` issue prefix.
+-   The `resolve-issue-locking` action now just runs once a week.
+
 ## [0.16.4] - 2024-07-10
 
 ### Fixed
@@ -320,7 +327,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.4...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.5...HEAD
+
+[0.16.5]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.4...v0.16.5
 
 [0.16.4]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.3...v0.16.4
 
