@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   The `validate-branch-name` action now allows `NO-ISSUE` instead of a `GH-` issue prefix.
+
 ## [0.16.4] - 2024-07-10
 
 ### Fixed
