@@ -7,9 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.16.8] - 2024-07-23
+
 ### Fixed
 
--  Declaring `neoForge()` without a `modId` set will not create a mod or run configs. Can be used for a NeoForge library module.
+-   Declaring `neoForge()` without a `modId` set will not create a mod or run configs. Can be used for a NeoForge library module.
 
 ## [0.16.7] - 2024-07-20
 
@@ -343,7 +345,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.7...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.8...HEAD
+
+[0.16.8]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.7...v0.16.8
 
 [0.16.7]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.6...v0.16.7
 
