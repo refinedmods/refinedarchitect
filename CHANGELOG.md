@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-  Declaring `neoForge()` without a `modId` set will not create a mod or run configs. Can be used for a NeoForge library module.
+
 ## [0.16.7] - 2024-07-20
 
 ### Fixed
