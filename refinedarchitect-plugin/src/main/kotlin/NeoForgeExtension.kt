@@ -15,18 +15,20 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
         project.extensions.getByType<NfExtension>().apply {
             version.set(neoForgeVersion)
             addModdingDependenciesTo(sourceSets["test"])
-            mods {
-                register(modId!!) {
-                    modSourceSets.set(listOf(sourceSets["main"], sourceSets["test"]))
+            if (modId != null) {
+                mods {
+                    register(modId!!) {
+                        modSourceSets.set(listOf(sourceSets["main"], sourceSets["test"]))
+                    }
                 }
-            }
-            runs {
-                register("client") {
-                    client()
-                }
-                register("server") {
-                    server()
-                    programArgument("--nogui")
+                runs {
+                    register("client") {
+                        client()
+                    }
+                    register("server") {
+                        server()
+                        programArgument("--nogui")
+                    }
                 }
             }
             parchment {
