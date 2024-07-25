@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
 -   Declaring `fabric()` without a `modId` set will not create a mod or run configs. Can be used for a Fabric library module.
 
 ## [0.16.8] - 2024-07-23
