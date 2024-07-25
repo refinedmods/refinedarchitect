@@ -20,28 +20,30 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
         project.dependencies.add("modImplementation", "net.fabricmc:fabric-loader:${fabricLoaderVersion}")
         project.dependencies.add("modImplementation", "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}")
 
-        project.extensions.getByType<LoomGradleExtensionAPI>().apply {
-            val accessWidenerFile = project.file("src/main/resources/${modId!!}.accesswidener")
-            if (accessWidenerFile.exists()) {
-                accessWidenerPath.set(accessWidenerFile)
-            }
-            runs {
-                getByName("client") {
-                    client()
-                    setConfigName("Fabric Client")
-                    ideConfigGenerated(true)
-                    runDir("run")
+        if (modId != null) {
+            project.extensions.getByType<LoomGradleExtensionAPI>().apply {
+                val accessWidenerFile = project.file("src/main/resources/${modId!!}.accesswidener")
+                if (accessWidenerFile.exists()) {
+                    accessWidenerPath.set(accessWidenerFile)
                 }
-                getByName("server") {
-                    server()
-                    setConfigName("Fabric Server")
-                    ideConfigGenerated(true)
-                    runDir("run")
+                runs {
+                    getByName("client") {
+                        client()
+                        setConfigName("Fabric Client")
+                        ideConfigGenerated(true)
+                        runDir("run")
+                    }
+                    getByName("server") {
+                        server()
+                        setConfigName("Fabric Server")
+                        ideConfigGenerated(true)
+                        runDir("run")
+                    }
                 }
-            }
-            mixin {
-                showMessageTypes.set(true)
-                messages.put("TARGET_ELEMENT_NOT_FOUND", "disabled")
+                mixin {
+                    showMessageTypes.set(true)
+                    messages.put("TARGET_ELEMENT_NOT_FOUND", "disabled")
+                }
             }
         }
         project.tasks.withType<Jar>().configureEach {
@@ -55,6 +57,7 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
     }
 
     fun compileWithProject(dependency: Project) {
+        project.evaluationDependsOn(":" + dependency.name)
         val sourceSets = dependency.extensions.getByType<JavaPluginExtension>().sourceSets
         project.tasks.withType<JavaCompile>().configureEach {
             source(sourceSets["main"].allSource)
