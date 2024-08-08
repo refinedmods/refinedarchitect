@@ -11,7 +11,7 @@ open class CommonExtension(private val project: Project) : BaseExtension(project
             val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
             addModdingDependenciesTo(sourceSets["test"])
             parchment {
-                minecraftVersion.set(mcVersion)
+                minecraftVersion.set(parchmentMcVersion)
                 mappingsVersion.set(parchmentVersion)
             }
         }

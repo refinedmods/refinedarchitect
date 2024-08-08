@@ -32,7 +32,7 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
                 }
             }
             parchment {
-                minecraftVersion.set(mcVersion)
+                minecraftVersion.set(parchmentMcVersion)
                 mappingsVersion.set(parchmentVersion)
             }
         }
