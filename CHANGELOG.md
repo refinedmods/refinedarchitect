@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.17.0] - 2024-08-08
+
 ### Changed
 
 -   Updated NeoForge and Fabric to Minecraft 1.21.1.
@@ -360,7 +362,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.9...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.17.0...HEAD
+
+[0.17.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.9...v0.17.0
 
 [0.16.9]: https://github.com/refinedmods/refinedarchitect/compare/v0.16.8...v0.16.9
 
