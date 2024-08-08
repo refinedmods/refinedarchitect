@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Javadoc failing to generate.
+
 ## [0.16.9] - 2024-07-25
 
 ### Fixed
