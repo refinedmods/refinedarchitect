@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Updated NeoForge and Fabric to Minecraft 1.21.1.
+
 ### Fixed
 
 -   Javadoc failing to generate.
