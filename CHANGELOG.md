@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Fixed
 
 -   Javadoc failing to generate.
+-   Mastodon announcements have been removed as anvil.social is no longer online.
 
 ## [0.16.9] - 2024-07-25
 
