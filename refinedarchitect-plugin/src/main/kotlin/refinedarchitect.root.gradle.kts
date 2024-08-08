@@ -7,6 +7,9 @@ plugins {
 
 tasks.register<Javadoc>("javadocAggregate") {
     val projects = allprojects.filter { it.extra.has("refinedarchitect_javadoc") }
+    projects.forEach {
+        dependsOn(it.tasks.getByName("assemble"))
+    }
     source(projects.flatMap { it.sourceSets["main"].allJava })
     classpath = files(projects.flatMap { it.sourceSets["main"].compileClasspath })
     setDestinationDir(file("build/docs/javadoc"))

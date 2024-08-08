@@ -15,7 +15,7 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
         project.dependencies.add("minecraft", "com.mojang:minecraft:${mcVersion}")
         project.dependencies.add("mappings", project.extensions.getByType<LoomGradleExtensionAPI>().layered() {
             officialMojangMappings()
-            parchment("org.parchmentmc.data:parchment-${mcVersion}:${parchmentVersion}@zip")
+            parchment("org.parchmentmc.data:parchment-${parchmentMcVersion}:${parchmentVersion}@zip")
         })
         project.dependencies.add("modImplementation", "net.fabricmc:fabric-loader:${fabricLoaderVersion}")
         project.dependencies.add("modImplementation", "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}")
