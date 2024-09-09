@@ -1,6 +1,5 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
 import org.gradle.api.Project
-import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.tasks.Jar
 import org.gradle.kotlin.dsl.get
@@ -56,6 +55,11 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
             source(project.configurations["commonJava"])
         }
         project.tasks.withType<ProcessResources>().configureEach {
+            val properties = mapOf("version" to project.version)
+            inputs.properties(properties)
+            filesMatching(listOf("fabric.mod.json")) {
+                expand(properties)
+            }
             dependsOn(project.configurations["commonResources"])
             from(project.configurations["commonResources"])
         }
