@@ -15,6 +15,7 @@ open class CommonExtension(private val project: Project) : BaseExtension(project
                 mappingsVersion.set(parchmentVersion)
             }
         }
+        project.artifacts.add("commonResources", project.file("src/generated/resources/"))
         project.extensions.getByType<JavaPluginExtension>().apply {
             sourceSets["main"].resources.srcDir("src/generated/resources")
         }
