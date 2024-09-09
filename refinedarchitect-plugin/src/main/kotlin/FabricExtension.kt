@@ -12,6 +12,11 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
     var modId: String? = null
 
     fun fabric() {
+        project.configurations["commonJava"].isCanBeResolved = true
+        project.configurations["commonJava"].isCanBeConsumed = modId == null
+        project.configurations["commonResources"].isCanBeResolved = true
+        project.configurations["commonResources"].isCanBeConsumed = modId == null
+
         project.dependencies.add("minecraft", "com.mojang:minecraft:${mcVersion}")
         project.dependencies.add("mappings", project.extensions.getByType<LoomGradleExtensionAPI>().layered() {
             officialMojangMappings()
@@ -46,25 +51,16 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
                 }
             }
         }
+        project.tasks.withType<JavaCompile>().configureEach {
+            dependsOn(project.configurations["commonJava"])
+            source(project.configurations["commonJava"])
+        }
+        project.tasks.withType<ProcessResources>().configureEach {
+            dependsOn(project.configurations["commonResources"])
+            from(project.configurations["commonResources"])
+        }
         project.tasks.withType<Jar>().configureEach {
             from("../LICENSE.md")
         }
-    }
-
-    fun addProject(dependency: Project) {
-        project.dependencies.add("api", dependency)
-        project.dependencies.add("include", dependency)
-    }
-
-    fun compileWithProject(dependency: Project) {
-        project.evaluationDependsOn(":" + dependency.name)
-        val sourceSets = dependency.extensions.getByType<JavaPluginExtension>().sourceSets
-        project.tasks.withType<JavaCompile>().configureEach {
-            source(sourceSets["main"].allSource)
-        }
-        project.tasks.withType<ProcessResources>().configureEach {
-            from(sourceSets["main"].resources)
-        }
-        project.dependencies.add("compileOnly", dependency)
     }
 }

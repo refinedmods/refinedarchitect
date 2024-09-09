@@ -9,6 +9,17 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    create("commonJava") {
+        isCanBeResolved = false
+        isCanBeConsumed = true
+    }
+    create("commonResources") {
+        isCanBeResolved = false
+        isCanBeConsumed = true
+    }
+}
+
 version = "0.0.0"
 
 if (System.getenv("GITHUB_SHA") != null) {
@@ -47,4 +58,9 @@ tasks.withType<ProcessResources> {
     filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml")) {
         expand("version" to project.version)
     }
+}
+
+artifacts {
+    add("commonJava", sourceSets["main"].java.sourceDirectories.singleFile)
+    add("commonResources", sourceSets["main"].resources.sourceDirectories.singleFile)
 }
