@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Resources not updating correctly on NeoForge.
+
 ## [0.17.1] - 2024-08-08
 
 ### Fixed

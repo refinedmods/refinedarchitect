@@ -1,17 +1,22 @@
-import net.neoforged.moddevgradle.dsl.NeoForgeExtension as NfExtension
 import org.gradle.api.Project
-import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.JavaPluginExtension
+import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.tasks.Jar
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.withType
+import org.gradle.language.jvm.tasks.ProcessResources
+import net.neoforged.moddevgradle.dsl.NeoForgeExtension as NfExtension
 
 open class NeoForgeExtension(private val project: Project) : BaseExtension(project) {
     var modId: String? = null
 
     fun neoForge() {
         val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
+        project.configurations["commonJava"].isCanBeResolved = true
+        project.configurations["commonJava"].isCanBeConsumed = modId == null
+        project.configurations["commonResources"].isCanBeResolved = true
+        project.configurations["commonResources"].isCanBeConsumed = modId == null
         project.extensions.getByType<NfExtension>().apply {
             version.set(neoForgeVersion)
             addModdingDependenciesTo(sourceSets["test"])
@@ -37,10 +42,15 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
             }
         }
         sourceSets["main"].resources.srcDirs.add(project.file("src/generated/resources"))
+        project.tasks.withType<JavaCompile>().configureEach {
+            dependsOn(project.configurations["commonJava"])
+            source(project.configurations["commonJava"])
+        }
+        project.tasks.withType<ProcessResources>().configureEach {
+            dependsOn(project.configurations["commonResources"])
+            from(project.configurations["commonResources"])
+        }
         project.tasks.withType<Jar>().configureEach {
-            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-            // These come in from the common API jars but should not end up in the neoforge jar
-            exclude("fabric.mod.json")
             from("../LICENSE.md")
         }
     }
@@ -75,23 +85,6 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
                     programArgument(sourceProject.file("src/generated/resources/").absolutePath)
                     programArgument("--existing")
                     programArgument(sourceProject.file("src/main/resources/").absolutePath)
-                }
-            }
-        }
-    }
-
-    fun compileWithProject(dependency: Project) {
-        project.evaluationDependsOn(":" + dependency.name)
-        project.dependencies.add("compileOnly", dependency)
-        project.dependencies.add("testCompileOnly", dependency)
-        val sourceSets = dependency.extensions.getByType<JavaPluginExtension>().sourceSets
-        project.tasks.withType<Jar>().configureEach {
-            from(sourceSets["main"].output)
-        }
-        project.extensions.getByType<NfExtension>().apply {
-            mods {
-                getByName(modId!!) {
-                    modSourceSets.add(sourceSets["main"])
                 }
             }
         }
