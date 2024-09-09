@@ -25,8 +25,8 @@ repositories {
 }
 
 dependencies {
-    implementation("net.neoforged:moddev-gradle:2.0.5-beta")
-    implementation("fabric-loom:fabric-loom.gradle.plugin:1.7-SNAPSHOT")
+    implementation("net.neoforged:moddev-gradle:2.0.27-beta")
+    implementation("fabric-loom:fabric-loom.gradle.plugin:1.8.0-alpha.9")
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.1.8")
     implementation("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0")
     implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373")
@@ -44,5 +44,6 @@ publishing {
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
+        mavenLocal()
     }
 }
