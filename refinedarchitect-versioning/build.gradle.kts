@@ -51,7 +51,6 @@ publishing {
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
-        mavenLocal()
     }
     publications {
         create<MavenPublication>("maven") {

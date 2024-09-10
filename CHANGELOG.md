@@ -7,6 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Support for the Gradle config cache.
+
+### Changed
+
+-   The CurseForge and Modrinth publishing has been updated to use modmuss' mod-publish-plugin.
+
 ## [0.18.0] - 2024-09-09
 
 ### Fixed
