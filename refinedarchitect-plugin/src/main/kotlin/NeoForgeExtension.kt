@@ -4,9 +4,10 @@ import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.tasks.Jar
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.language.jvm.tasks.ProcessResources
-import net.neoforged.moddevgradle.dsl.NeoForgeExtension as NfExtension
+import net.neoforged.moddevgradle.dsl.NeoForgeExtension as NeoForge
 
 open class NeoForgeExtension(private val project: Project) : BaseExtension(project) {
     var modId: String? = null
@@ -17,7 +18,16 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
         project.configurations["commonJava"].isCanBeConsumed = modId == null
         project.configurations["commonResources"].isCanBeResolved = true
         project.configurations["commonResources"].isCanBeConsumed = modId == null
-        project.extensions.getByType<NfExtension>().apply {
+        val generateModMetadata = project.tasks.register("generateModMetadata", ProcessResources::class) {
+            val properties = mapOf("version" to project.version)
+            inputs.properties(properties)
+            expand(properties)
+            from("src/main/templates")
+            into("build/generated/sources/modMetadata")
+        }
+        sourceSets["main"].resources.srcDir(generateModMetadata)
+        sourceSets["main"].resources.srcDirs.add(project.file("src/generated/resources"))
+        project.extensions.getByType<NeoForge>().apply {
             version.set(neoForgeVersion)
             addModdingDependenciesTo(sourceSets["test"])
             if (modId != null) {
@@ -40,15 +50,17 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
                 minecraftVersion.set(parchmentMcVersion)
                 mappingsVersion.set(parchmentVersion)
             }
+            ideSyncTask(generateModMetadata)
         }
-        sourceSets["main"].resources.srcDirs.add(project.file("src/generated/resources"))
         project.tasks.withType<JavaCompile>().configureEach {
             dependsOn(project.configurations["commonJava"])
             source(project.configurations["commonJava"])
         }
         project.tasks.withType<ProcessResources>().configureEach {
-            dependsOn(project.configurations["commonResources"])
-            from(project.configurations["commonResources"])
+            if (name != "generateModMetadata") {
+                dependsOn(project.configurations["commonResources"])
+                from(project.configurations["commonResources"])
+            }
         }
         project.tasks.withType<Jar>().configureEach {
             from("../LICENSE.md")
@@ -58,7 +70,7 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
     fun gameTests() {
         project.dependencies.add("testImplementation", "net.neoforged:testframework:${neoForgeVersion}")
         val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
-        project.extensions.getByType<NfExtension>().apply {
+        project.extensions.getByType<NeoForge>().apply {
             runs {
                 register("gameTestServer") {
                     type.set("gameTestServer")
@@ -74,7 +86,7 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
     }
 
     fun dataGeneration(sourceProject: Project = project) {
-        project.extensions.getByType<NfExtension>().apply {
+        project.extensions.getByType<NeoForge>().apply {
             runs {
                 create("data") {
                     data()

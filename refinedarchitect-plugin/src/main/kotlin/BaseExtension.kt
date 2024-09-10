@@ -1,13 +1,15 @@
-import com.modrinth.minotaur.Minotaur
-import com.modrinth.minotaur.ModrinthExtension
 import info.solidsoft.gradle.pitest.PitestPlugin
 import info.solidsoft.gradle.pitest.PitestPluginExtension
-import net.darkhax.curseforgegradle.TaskPublishCurseForge
+import me.modmuss50.mpp.ModPublishExtension
+import me.modmuss50.mpp.MppPlugin
+import me.modmuss50.mpp.ReleaseType
+import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
+import org.gradle.jvm.tasks.Jar
 import org.gradle.kotlin.dsl.*
 import org.sonarqube.gradle.SonarExtension
 import org.sonarqube.gradle.SonarQubePlugin
@@ -25,49 +27,50 @@ open class BaseExtension(private val project: Project) {
         if (options.maven == true) {
             enableMavenPublishing()
         }
-        options.curseForge?.let { enableCurseForgePublishing(it) }
-        options.modrinth?.let { enableModrinthPublishing(it) }
-    }
-
-    private fun enableCurseForgePublishing(projectId: String) {
-        project.tasks.register<TaskPublishCurseForge>("publishCurseForge") {
-            apiToken = System.getenv("CURSEFORGE_TOKEN")
-            val isNeoForge = project.pluginManager.hasPlugin("net.neoforged.moddev")
-            val mainFile = upload(projectId, project.tasks.getByName(if (isNeoForge) "jar" else "remapJar"))
-            mainFile.releaseType = if (project.version.toString().contains("beta")) "beta" else if (project.version.toString().contains("alpha")) "alpha" else "release"
-            mainFile.changelog = System.getenv("RELEASE_CHANGELOG")
-            mainFile.changelogType = "markdown"
-            mainFile.displayName = "v" + project.version.toString()
-            mainFile.addGameVersion(mcVersion)
-            // https://github.com/refinedmods/refinedarchitect/issues/149
-            if (isNeoForge) {
-                mainFile.addModLoader("NeoForge")
-            } else {
-                mainFile.addRequirement("fabric-api")
-            }
-        }
-    }
-
-    private fun enableModrinthPublishing(projId: String) {
-        project.plugins.apply(Minotaur::class.java)
-        val isNeoForge = project.pluginManager.hasPlugin("net.neoforged.moddev")
-        project.extensions.getByType<ModrinthExtension>().apply {
-            token.set(System.getenv("MODRINTH_TOKEN"))
-            projectId.set(projId)
-            uploadFile = project.tasks.getByName(if (isNeoForge) "jar" else "remapJar")
-            versionType.set(if (project.version.toString().contains("beta")) "beta" else if (project.version.toString().contains("alpha")) "alpha" else "release")
-            versionNumber.set(project.version.toString())
-            versionName.set("v" + project.version)
-            // https://github.com/refinedmods/refinedarchitect/issues/149
-            if (isNeoForge) {
-                loaders.add("neoforge")
-                gameVersions.add(mcVersion)
-            } else {
-                dependencies.apply {
-                    required.project("fabric-api")
+        if (options.curseForge != null || options.modrinth != null) {
+            project.plugins.apply(MppPlugin::class)
+            project.extensions.getByType(ModPublishExtension::class).apply {
+                val isNeoForge = project.pluginManager.hasPlugin("net.neoforged.moddev")
+                if (isNeoForge) {
+                    val jar by project.tasks.getting(Jar::class)
+                    file.set(jar.archiveFile)
+                    modLoaders.add("NeoForge")
+                } else {
+                    val remapJar by project.tasks.getting(RemapJarTask::class)
+                    file.set(remapJar.archiveFile)
+                    modLoaders.add("Fabric")
+                }
+                type.set(
+                    if (project.version.toString()
+                            .contains("beta")
+                    ) ReleaseType.BETA else if (project.version.toString()
+                            .contains("alpha")
+                    ) ReleaseType.ALPHA else ReleaseType.STABLE
+                )
+                changelog.set(System.getenv("RELEASE_CHANGELOG"))
+                displayName.set("v" + project.version.toString())
+                options.curseForge?.let {
+                    curseforge {
+                        accessToken.set(System.getenv("CURSEFORGE_TOKEN"))
+                        minecraftVersions.add(mcVersion)
+                        changelogType.set("markdown")
+                        projectId.set(it)
+                        if (!isNeoForge) {
+                            requires("fabric-api")
+                        }
+                    }
+                }
+                options.modrinth?.let {
+                    modrinth {
+                        accessToken.set(System.getenv("MODRINTH_TOKEN"))
+                        projectId.set(it)
+                        minecraftVersions.add(mcVersion)
+                        if (!isNeoForge) {
+                            requires("fabric-api")
+                        }
+                    }
                 }
             }
-            changelog.set(System.getenv("RELEASE_CHANGELOG"))
         }
     }
 
@@ -81,7 +84,7 @@ open class BaseExtension(private val project: Project) {
             coverageThreshold.set(80)
         }
         project.dependencies.add("testRuntimeOnly", "org.junit.platform:junit-platform-launcher")
-                ?.because("required for pitest")
+            ?.because("required for pitest")
     }
 
     fun testing() {
@@ -131,7 +134,10 @@ open class BaseExtension(private val project: Project) {
                 property("sonar.projectKey", projectKey)
                 property("sonar.organization", organization)
                 property("sonar.host.url", "https://sonarcloud.io")
-                property("sonar.coverage.jacoco.xmlReportPaths", "${project.layout.buildDirectory.get()}/reports/jacoco/codeCoverageReportAggregate/codeCoverageReportAggregate.xml")
+                property(
+                    "sonar.coverage.jacoco.xmlReportPaths",
+                    "${project.layout.buildDirectory.get()}/reports/jacoco/codeCoverageReportAggregate/codeCoverageReportAggregate.xml"
+                )
             }
         }
     }

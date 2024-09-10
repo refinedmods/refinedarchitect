@@ -52,14 +52,6 @@ checkstyle {
     toolVersion = "10.17.0"
 }
 
-tasks.withType<ProcessResources> {
-    inputs.property("version", project.version)
-
-    filesMatching(listOf("fabric.mod.json", "META-INF/neoforge.mods.toml")) {
-        expand("version" to project.version)
-    }
-}
-
 artifacts {
     add("commonJava", sourceSets["main"].java.sourceDirectories.singleFile)
     add("commonResources", sourceSets["main"].resources.sourceDirectories.singleFile)
