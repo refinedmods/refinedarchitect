@@ -96,7 +96,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Publish to Maven
-        run: ./gradlew publish
+        run: ./gradlew --no-configuration-cache publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CREEPERHOST_MAVEN_USERNAME: ${{ secrets.CREEPERHOST_MAVEN_USERNAME }}
@@ -162,7 +162,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to CurseForge
-        run: ./gradlew publishCurseforge
+        run: ./gradlew --no-configuration-cache publishCurseforge
 
   deploy-modrinth:
     name: Deploy to Modrinth
@@ -179,7 +179,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to Modrinth
-        run: ./gradlew publishModrinth
+        run: ./gradlew --no-configuration-cache publishModrinth
 
   announce-discord:
     name: Announce to Discord
