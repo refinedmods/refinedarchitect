@@ -162,7 +162,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to CurseForge
-        run: ./gradlew publishCurseForge
+        run: ./gradlew publishCurseforge
 
   deploy-modrinth:
     name: Deploy to Modrinth
@@ -179,7 +179,7 @@ jobs:
       - name: Setup Java
         uses: refinedmods/refinedarchitect/.github/actions/setup-java@develop
       - name: Deploy to Modrinth
-        run: ./gradlew modrinth
+        run: ./gradlew publishModrinth
 
   announce-discord:
     name: Announce to Discord
