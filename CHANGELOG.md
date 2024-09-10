@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.19.0] - 2024-09-10
+
 ### Added
 
 -   Support for the Gradle config cache.
@@ -382,7 +384,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.18.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.19.0...HEAD
+
+[0.19.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.18.0...v0.19.0
 
 [0.18.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.17.1...v0.18.0
 
