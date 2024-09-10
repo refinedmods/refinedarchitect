@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fixed publishing not working with the config cache.
+
 ## [0.19.0] - 2024-09-10
 
 ### Added
