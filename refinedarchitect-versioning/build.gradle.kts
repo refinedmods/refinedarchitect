@@ -13,22 +13,22 @@ catalog {
         val apiGuardian = version("apiGuardian", "1.1.2")
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
-        val junit5 = version("junit5", "5.10.3")
+        val junit5 = version("junit5", "5.11.3")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
         library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit5)
 
-        val assertJ = version("assertJ", "3.26.0")
+        val assertJ = version("assertJ", "3.26.3")
         library("assertj", "org.assertj", "assertj-core").versionRef(assertJ)
 
-        val mockito = version("mockito", "5.12.0")
+        val mockito = version("mockito", "5.14.2")
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
-        val equalsVerifier = version("equalsverifier", "3.16.1")
+        val equalsVerifier = version("equalsverifier", "3.17.3")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
-        val clothConfig = version("cloth-config-fabric", "15.0.127")
+        val clothConfig = version("cloth-config-fabric", "15.0.140")
         library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
         // https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
@@ -36,7 +36,7 @@ catalog {
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // https://modrinth.com/mod/modmenu
-        val modmenu = version("modmenu", "11.0.1")
+        val modmenu = version("modmenu", "11.0.3")
         library("modmenu", "com.terraformersmc", "modmenu").versionRef(modmenu)
     }
 }
