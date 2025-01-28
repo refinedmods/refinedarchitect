@@ -34,6 +34,7 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(javaVersion)
     }
+    withSourcesJar()
 }
 
 dependencies {

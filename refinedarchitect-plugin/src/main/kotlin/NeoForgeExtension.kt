@@ -28,7 +28,7 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
         sourceSets["main"].resources.srcDir(generateModMetadata)
         sourceSets["main"].resources.srcDirs.add(project.file("src/generated/resources"))
         project.extensions.getByType<NeoForge>().apply {
-            version.set(neoForgeVersion)
+            setVersion(neoForgeVersion)
             addModdingDependenciesTo(sourceSets["test"])
             if (modId != null) {
                 mods {

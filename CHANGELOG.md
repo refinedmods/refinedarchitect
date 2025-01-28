@@ -7,6 +7,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.21.0] - 2025-01-28
+
+### Added
+
+-   Sources JAR is now created and published.
+
+### Changed
+
+-   Updated dependencies.
+
 ## [0.20.0] - 2024-11-24
 
 ### Changed
@@ -396,7 +406,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.20.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v0.21.0...HEAD
+
+[0.21.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.20.0...v0.21.0
 
 [0.20.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.19.1...v0.20.0
 
