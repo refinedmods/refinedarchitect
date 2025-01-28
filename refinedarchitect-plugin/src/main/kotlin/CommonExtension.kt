@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.getByType
 open class CommonExtension(private val project: Project) : BaseExtension(project) {
     fun common() {
         project.extensions.getByType<NeoForgeExtension>().apply {
-            neoFormVersion.set(nfVersion)
+            setNeoFormVersion(nfVersion)
             val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
             addModdingDependenciesTo(sourceSets["test"])
             parchment {
