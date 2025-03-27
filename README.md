@@ -16,7 +16,6 @@ See [refinedarchitect-template](https://github.com/refinedmods/refinedarchitect-
     - [Issues](https://github.com/refinedmods/refinedarchitect/issues)
     - [Refined Mods on GitHub](https://github.com/refinedmods)
 - [Discord](https://discordapp.com/invite/VYzsydb)
-- [Twitter](https://twitter.com/refinedmods)
 
 ## Building
 
