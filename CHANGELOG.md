@@ -7,6 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Set `RELEASE_DRY_RUN` to `true` to print debug info about the release and not actually release.
+
+### Fixed
+
+-   Fixed sources jar not including all sources from `commonJava` configuration.
+
 ## [0.21.0] - 2025-01-28
 
 ### Added

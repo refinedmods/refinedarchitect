@@ -40,6 +40,7 @@ open class BaseExtension(private val project: Project) {
                     file.set(remapJar.archiveFile)
                     modLoaders.add("Fabric")
                 }
+                dryRun.set(System.getenv("RELEASE_DRY_RUN") == "true")
                 type.set(
                     if (project.version.toString()
                             .contains("beta")
