@@ -18,6 +18,11 @@ configurations {
         isCanBeResolved = false
         isCanBeConsumed = true
     }
+    create("commonJavaResolved") {
+        isCanBeResolved = true
+        isCanBeConsumed = false
+        extendsFrom(configurations.getByName("commonJava"))
+    }
 }
 
 version = "0.0.0"
@@ -35,6 +40,11 @@ java {
         languageVersion = JavaLanguageVersion.of(javaVersion)
     }
     withSourcesJar()
+}
+
+tasks.named<Jar>("sourcesJar") {
+    from(sourceSets.main.get().allSource)
+    from(configurations["commonJavaResolved"])
 }
 
 dependencies {
