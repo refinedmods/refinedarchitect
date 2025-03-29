@@ -17,7 +17,9 @@ import org.sonarqube.gradle.SonarQubePlugin
 class PublishingOptions {
     var maven: Boolean? = false
     var curseForge: String? = null
+    var curseForgeRequiredDependencies: List<String>? = null
     var modrinth: String? = null
+    var modrinthRequiredDependencies: List<String>? = null
 }
 
 open class BaseExtension(private val project: Project) {
@@ -56,9 +58,7 @@ open class BaseExtension(private val project: Project) {
                         minecraftVersions.add(mcVersion)
                         changelogType.set("markdown")
                         projectId.set(it)
-                        if (!isNeoForge) {
-                            requires("fabric-api")
-                        }
+                        options.curseForgeRequiredDependencies?.forEach { requires(it) }
                     }
                 }
                 options.modrinth?.let {
@@ -66,9 +66,7 @@ open class BaseExtension(private val project: Project) {
                         accessToken.set(System.getenv("MODRINTH_TOKEN"))
                         projectId.set(it)
                         minecraftVersions.add(mcVersion)
-                        if (!isNeoForge) {
-                            requires("fabric-api")
-                        }
+                        options.modrinthRequiredDependencies?.forEach { requires(it) }
                     }
                 }
             }

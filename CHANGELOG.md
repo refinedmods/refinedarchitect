@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Added ability to set required dependencies for CurseForge and Modrinth publishing.
+
 ## [1.0.0] - 2025-03-27
 
 ### Added
