@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-03-29
+
+### Added
+
+-   Added ability to set required dependencies for CurseForge and Modrinth publishing.
+
 ## [1.0.0] - 2025-03-27
 
 ### Added
@@ -416,7 +422,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.1.0...HEAD
+
+[1.1.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.0.0...v1.1.0
 
 [1.0.0]: https://github.com/refinedmods/refinedarchitect/compare/v0.21.0...v1.0.0
 
