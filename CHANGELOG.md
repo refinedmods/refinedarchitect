@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-04-05
+
 ### Added
 
 -   Added ability to set `validation-depth` on the validate changelog action.
@@ -426,7 +428,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.2.0...HEAD
+
+[1.2.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.1.0...v1.2.0
 
 [1.1.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.0.0...v1.1.0
 
