@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Added ability to set `validation-depth` on the validate changelog action.
+
 ## [1.1.0] - 2025-03-29
 
 ### Added

@@ -6,6 +6,10 @@ on:
         required: false
         type: string
         default: 'error'
+      validation-depth:
+        required: false
+        type: string
+        default: '10'
 jobs:
   changelog:
     runs-on: ubuntu-latest
@@ -17,6 +21,7 @@ jobs:
         with:
           path: ./CHANGELOG.md
           validation_level: ${{ inputs.validation-level }}
+          validation_depth: ${{ inputs.validation-depth }}
       - name: Validate if changelog is updated
         uses: dangoslen/changelog-enforcer@v3
         with:
