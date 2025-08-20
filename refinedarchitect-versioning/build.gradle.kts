@@ -15,21 +15,21 @@ catalog {
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
         // See: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-        val junit5 = version("junit5", "5.11.4")
+        val junit5 = version("junit5", "5.13.4")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
         library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit5)
 
         // See: https://mvnrepository.com/artifact/org.assertj/assertj-core
-        val assertJ = version("assertJ", "3.27.3")
+        val assertJ = version("assertJ", "3.27.4")
         library("assertj", "org.assertj", "assertj-core").versionRef(assertJ)
 
         // See: https://mvnrepository.com/artifact/org.mockito/mockito-core
-        val mockito = version("mockito", "5.15.2")
+        val mockito = version("mockito", "5.19.0")
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
         // See: https://mvnrepository.com/artifact/nl.jqno.equalsverifier/equalsverifier
-        val equalsVerifier = version("equalsverifier", "3.18.1")
+        val equalsVerifier = version("equalsverifier", "3.19.4")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // See: https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
@@ -37,7 +37,7 @@ catalog {
         library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
         // See: https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
-        val energy = version("teamreborn-energy", "4.1.0")
+        val energy = version("teamreborn-energy", "4.2.0")
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // See: https://modrinth.com/mod/modmenu
