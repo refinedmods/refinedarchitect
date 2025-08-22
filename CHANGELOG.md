@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fixed tests not being able to run.
+
 ## [1.3.0] - 2025-08-20
 
 ### Changed

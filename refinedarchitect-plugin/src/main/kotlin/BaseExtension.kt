@@ -82,14 +82,13 @@ open class BaseExtension(private val project: Project) {
             mutationThreshold.set(90)
             coverageThreshold.set(80)
         }
-        project.dependencies.add("testRuntimeOnly", "org.junit.platform:junit-platform-launcher")
-            ?.because("required for pitest")
     }
 
     fun testing() {
         project.tasks.withType<Test>().forEach {
             it.useJUnitPlatform()
         }
+        project.dependencies.add("testRuntimeOnly", "org.junit.platform:junit-platform-launcher")
     }
 
     fun javadoc() {
