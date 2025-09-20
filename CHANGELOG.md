@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Specifying TeamReborn Energy that is incompatible with Minecraft 1.21.x.
+
 ## [1.3.1] - 2025-08-22
 
 ### Fixed

@@ -36,8 +36,8 @@ catalog {
         val clothConfig = version("cloth-config-fabric", "15.0.140")
         library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
-        // See: https://github.com/TechReborn/Energy (https://maven.fabricmc.net/teamreborn/energy/)
-        val energy = version("teamreborn-energy", "4.2.0")
+        // See: https://github.com/TechReborn/Energy?tab=readme-ov-file#including-the-api-in-your-project (https://maven.fabricmc.net/teamreborn/energy/)
+        val energy = version("teamreborn-energy", "4.1.0")
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // See: https://modrinth.com/mod/modmenu
