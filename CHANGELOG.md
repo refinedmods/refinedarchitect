@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.3.2] - 2025-09-20
+
+### Fixed
+
+-   Specifying TeamReborn Energy that is incompatible with Minecraft 1.21.x.
+
 ## [1.3.1] - 2025-08-22
 
 ### Fixed
@@ -440,7 +446,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.2...HEAD
+
+[1.3.2]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.1...v1.3.2
 
 [1.3.1]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.0...v1.3.1
 
