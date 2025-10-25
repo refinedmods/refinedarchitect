@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.3.3] - 2025-10-25
+
+### Fixed
+
+-   The plugin is now also available on CreeperHost.
+
 ## [1.3.2] - 2025-09-20
 
 ### Fixed
@@ -446,7 +452,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.2...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.3...HEAD
+
+[1.3.3]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.2...v1.3.3
 
 [1.3.2]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.1...v1.3.2
 
