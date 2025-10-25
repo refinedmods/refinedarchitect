@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   The plugin is now also available on CreeperHost.
+
 ## [1.3.2] - 2025-09-20
 
 ### Fixed
