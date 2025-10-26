@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   The Refined Architect plugin IDs now start with `com.refinedmods.refinedarchitect`.
+
 ## [1.3.4] - 2025-10-26
 
 ## [1.3.3] - 2025-10-25

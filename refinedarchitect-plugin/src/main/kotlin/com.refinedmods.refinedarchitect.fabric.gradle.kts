@@ -1,5 +1,5 @@
 plugins {
-    id("refinedarchitect")
+    id("com.refinedmods.refinedarchitect")
     id("fabric-loom")
 }
 

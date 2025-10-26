@@ -2,7 +2,7 @@ import org.gradle.api.tasks.javadoc.Javadoc
 import org.gradle.kotlin.dsl.extra
 
 plugins {
-    id("refinedarchitect")
+    id("com.refinedmods.refinedarchitect")
 }
 
 tasks.register<Javadoc>("javadocAggregate") {
