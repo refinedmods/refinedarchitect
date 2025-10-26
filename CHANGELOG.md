@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.4.0] - 2025-10-26
+
+### Fixed
+
+-   The Refined Architect plugin IDs now start with `com.refinedmods.refinedarchitect`.
+
 ## [1.3.4] - 2025-10-26
 
 ## [1.3.3] - 2025-10-25
@@ -454,7 +460,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.4...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.4.0...HEAD
+
+[1.4.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.4...v1.4.0
 
 [1.3.4]: https://github.com/refinedmods/refinedarchitect/compare/v1.3.3...v1.3.4
 

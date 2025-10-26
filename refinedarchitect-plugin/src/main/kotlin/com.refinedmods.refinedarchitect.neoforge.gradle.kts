@@ -1,5 +1,5 @@
 plugins {
-    id("refinedarchitect")
+    id("com.refinedmods.refinedarchitect")
     id("net.neoforged.moddev")
 }
 
@@ -10,4 +10,4 @@ repositories {
     }
 }
 
-project.extensions.create("refinedarchitect", CommonExtension::class, project)
+project.extensions.create("refinedarchitect", NeoForgeExtension::class, project)
