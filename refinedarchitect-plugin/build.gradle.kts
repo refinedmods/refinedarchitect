@@ -16,11 +16,11 @@ repositories {
     gradlePluginPortal()
     maven {
         name = "NeoForge"
-        url = project.uri("https://maven.neoforged.net/releases")
+        url = uri("https://maven.neoforged.net/releases")
     }
     maven {
         name = "Fabric"
-        url = project.uri("https://maven.fabricmc.net/")
+        url = uri("https://maven.fabricmc.net/")
     }
 }
 
@@ -41,7 +41,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = project.uri("https://maven.pkg.github.com/" + System.getenv("GITHUB_REPOSITORY"))
+            url = uri("https://maven.pkg.github.com/" + System.getenv("GITHUB_REPOSITORY"))
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
@@ -49,7 +49,7 @@ publishing {
         }
         maven {
             name = "CreeperHost"
-            url = project.uri("https://maven.creeperhost.net/release")
+            url = uri("https://maven.creeperhost.net/release")
             credentials {
                 username = System.getenv("CREEPERHOST_MAVEN_USERNAME")
                 password = System.getenv("CREEPERHOST_MAVEN_TOKEN")
