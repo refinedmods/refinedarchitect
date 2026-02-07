@@ -26,15 +26,15 @@ repositories {
 
 dependencies {
     // See: https://projects.neoforged.net/neoforged/ModDevGradle
-    implementation("net.neoforged:moddev-gradle:2.0.107")
+    implementation("net.neoforged:moddev-gradle:2.0.141")
     // See: https://mvnrepository.com/artifact/fabric-loom/fabric-loom.gradle.plugin
-    implementation("fabric-loom:fabric-loom.gradle.plugin:1.11.4")
+    implementation("fabric-loom:fabric-loom.gradle.plugin:1.15.4")
     // See: https://github.com/neoforged/ModDevGradle/blob/main/build.gradle
     implementation("gradle.plugin.org.jetbrains.gradle.plugin.idea-ext:gradle-idea-ext:1.2")
-    implementation("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0")
-    implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373")
+    implementation("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.19.0-rc.2")
+    implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:7.2.2.6593")
     // See: https://modmuss50.github.io/mod-publish-plugin/getting_started/
-    implementation("me.modmuss50:mod-publish-plugin:0.8.4")
+    implementation("me.modmuss50:mod-publish-plugin:1.1.0")
 }
 
 publishing {

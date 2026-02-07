@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Ported to Minecraft 26.1.
+
 ## [1.4.1] - 2025-10-26
 
 ### Fixed

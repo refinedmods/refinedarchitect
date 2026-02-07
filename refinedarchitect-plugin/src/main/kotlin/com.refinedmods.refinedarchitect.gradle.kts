@@ -48,7 +48,7 @@ tasks.named<Jar>("sourcesJar") {
 }
 
 dependencies {
-    implementation("com.google.code.findbugs:jsr305:3.0.2")
+    implementation("org.jspecify:jspecify:1.0.0")
 }
 
 tasks.withType<JavaCompile> {

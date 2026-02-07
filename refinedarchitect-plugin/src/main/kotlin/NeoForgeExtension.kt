@@ -46,10 +46,6 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
                     }
                 }
             }
-            parchment {
-                minecraftVersion.set(parchmentMcVersion)
-                mappingsVersion.set(parchmentVersion)
-            }
             ideSyncTask(generateModMetadata)
         }
         project.tasks.withType<JavaCompile>().configureEach {
@@ -89,7 +85,7 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
         project.extensions.getByType<NeoForge>().apply {
             runs {
                 create("data") {
-                    data()
+                    clientData()
                     programArgument("--mod")
                     programArgument(modId!!)
                     programArgument("--all")
