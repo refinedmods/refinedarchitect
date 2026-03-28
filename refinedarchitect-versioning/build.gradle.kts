@@ -6,7 +6,7 @@ plugins {
 catalog {
     versionCatalog {
         // See: https://launchermeta.mojang.com/mc/game/version_manifest_v2.json
-        val slf4j = version("slf4j", "2.0.9")
+        val slf4j = version("slf4j", "2.0.17")
         library("slf4j-api", "org.slf4j", "slf4j-api").versionRef(slf4j)
         library("slf4j-impl", "org.slf4j", "slf4j-simple").versionRef(slf4j)
 
@@ -15,33 +15,34 @@ catalog {
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
         // See: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-        val junit5 = version("junit5", "5.13.4")
-        library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit5)
-        library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit5)
-        library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit5)
+        val junit = version("junit", "6.1.0-M1")
+        library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit)
+        library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit)
+        library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit)
 
         // See: https://mvnrepository.com/artifact/org.assertj/assertj-core
-        val assertJ = version("assertJ", "3.27.4")
+        val assertJ = version("assertJ", "4.0.0-M1")
         library("assertj", "org.assertj", "assertj-core").versionRef(assertJ)
 
         // See: https://mvnrepository.com/artifact/org.mockito/mockito-core
-        val mockito = version("mockito", "5.19.0")
+        val mockito = version("mockito", "5.23.0")
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
         // See: https://mvnrepository.com/artifact/nl.jqno.equalsverifier/equalsverifier
-        val equalsVerifier = version("equalsverifier", "3.19.4")
+        val equalsVerifier = version("equalsverifier", "4.4.1")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // See: https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
-        val clothConfig = version("cloth-config-fabric", "15.0.140")
+        val clothConfig = version("cloth-config-fabric", "26.1.154")
         library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
-        // See: https://github.com/TechReborn/Energy?tab=readme-ov-file#including-the-api-in-your-project (https://maven.fabricmc.net/teamreborn/energy/)
-        val energy = version("teamreborn-energy", "4.1.0")
+        // See: https://github.com/TechReborn/Energy?tab=readme-ov-file#including-the-api-in-your-project
+        // https://maven.fabricmc.net/teamreborn/energy/
+        val energy = version("teamreborn-energy", "5.0.0")
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // See: https://modrinth.com/mod/modmenu
-        val modmenu = version("modmenu", "11.0.3")
+        val modmenu = version("modmenu", "18.0.0-alpha.8")
         library("modmenu", "com.terraformersmc", "modmenu").versionRef(modmenu)
     }
 }
