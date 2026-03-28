@@ -10,10 +10,6 @@ open class CommonExtension(private val project: Project) : BaseExtension(project
             setNeoFormVersion(nfVersion)
             val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
             addModdingDependenciesTo(sourceSets["test"])
-            parchment {
-                minecraftVersion.set(parchmentMcVersion)
-                mappingsVersion.set(parchmentVersion)
-            }
         }
         project.artifacts.add("commonResources", project.file("src/generated/resources/"))
         project.extensions.getByType<JavaPluginExtension>().apply {

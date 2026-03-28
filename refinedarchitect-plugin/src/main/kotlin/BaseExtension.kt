@@ -3,7 +3,6 @@ import info.solidsoft.gradle.pitest.PitestPluginExtension
 import me.modmuss50.mpp.ModPublishExtension
 import me.modmuss50.mpp.MppPlugin
 import me.modmuss50.mpp.ReleaseType
-import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.publish.PublishingExtension
@@ -32,14 +31,12 @@ open class BaseExtension(private val project: Project) {
         if (options.curseForge != null || options.modrinth != null) {
             project.plugins.apply(MppPlugin::class)
             project.extensions.getByType(ModPublishExtension::class).apply {
+                val jar by project.tasks.getting(Jar::class)
+                file.set(jar.archiveFile)
                 val isNeoForge = project.pluginManager.hasPlugin("net.neoforged.moddev")
                 if (isNeoForge) {
-                    val jar by project.tasks.getting(Jar::class)
-                    file.set(jar.archiveFile)
                     modLoaders.add("NeoForge")
                 } else {
-                    val remapJar by project.tasks.getting(RemapJarTask::class)
-                    file.set(remapJar.archiveFile)
                     modLoaders.add("Fabric")
                 }
                 dryRun.set(System.getenv("RELEASE_DRY_RUN") == "true")
