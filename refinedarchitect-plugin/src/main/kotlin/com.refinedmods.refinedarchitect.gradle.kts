@@ -60,7 +60,7 @@ tasks.withType<JavaCompile> {
 }
 
 checkstyle {
-    toolVersion = "10.17.0"
+    toolVersion = "13.4.0"
 }
 
 artifacts {

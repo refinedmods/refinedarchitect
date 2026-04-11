@@ -7,6 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+-   Upgraded Pitest version.
+-   Upgraded Checkstyle version.
+
 ## [1.6.0] - 2026-04-11
 
 ### Added
