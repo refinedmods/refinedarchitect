@@ -73,8 +73,8 @@ open class BaseExtension(private val project: Project) {
     fun mutationTesting() {
         project.plugins.apply(PitestPlugin::class.java)
         project.extensions.getByType<PitestPluginExtension>().apply {
-            junit5PluginVersion.set("1.2.1")
-            pitestVersion.set("1.15.3")
+            junit5PluginVersion.set("1.2.3")
+            pitestVersion.set("1.23.0")
             outputFormats.set(listOf("HTML"))
             mutationThreshold.set(90)
             coverageThreshold.set(80)
