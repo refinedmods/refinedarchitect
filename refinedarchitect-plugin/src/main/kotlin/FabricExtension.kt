@@ -46,11 +46,11 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
                 }
             }
         }
-        project.tasks.withType<JavaCompile>().configureEach {
+        project.tasks.named("compileJava", JavaCompile::class.java) {
             dependsOn(project.configurations["commonJava"])
             source(project.configurations["commonJava"])
         }
-        project.tasks.withType<ProcessResources>().configureEach {
+        project.tasks.named("processResources", ProcessResources::class.java) {
             val properties = mapOf("version" to project.version)
             inputs.properties(properties)
             filesMatching(listOf("fabric.mod.json")) {

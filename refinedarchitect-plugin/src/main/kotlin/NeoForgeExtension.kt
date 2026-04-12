@@ -48,11 +48,11 @@ open class NeoForgeExtension(private val project: Project) : BaseExtension(proje
             }
             ideSyncTask(generateModMetadata)
         }
-        project.tasks.withType<JavaCompile>().configureEach {
+        project.tasks.named("compileJava", JavaCompile::class.java) {
             dependsOn(project.configurations["commonJava"])
             source(project.configurations["commonJava"])
         }
-        project.tasks.withType<ProcessResources>().configureEach {
+        project.tasks.named("processResources", ProcessResources::class.java) {
             if (name != "generateModMetadata") {
                 dependsOn(project.configurations["commonResources"])
                 from(project.configurations["commonResources"])
