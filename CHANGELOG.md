@@ -7,6 +7,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.6.2] - 2026-04-12
+
 ### Fixed
 
 -   Applying main sources to test sources during `JavaCompile` and `ProcessResources`.
@@ -489,7 +491,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.1...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.2...HEAD
+
+[1.6.2]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.1...v1.6.2
 
 [1.6.1]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.0...v1.6.1
 
