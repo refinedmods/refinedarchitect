@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Applying main sources to test sources during `JavaCompile` and `ProcessResources`.
+
 ## [1.6.1] - 2026-04-11
 
 ### Fixed
