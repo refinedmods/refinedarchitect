@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+-   Upgraded Loom for reproducible Fabric builds.
+
 ## [1.6.2] - 2026-04-12
 
 ### Fixed
