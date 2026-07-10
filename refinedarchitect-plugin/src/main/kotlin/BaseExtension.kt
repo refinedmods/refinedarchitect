@@ -3,6 +3,7 @@ import info.solidsoft.gradle.pitest.PitestPluginExtension
 import me.modmuss50.mpp.ModPublishExtension
 import me.modmuss50.mpp.MppPlugin
 import me.modmuss50.mpp.ReleaseType
+import me.modmuss50.mpp.platforms.modrinth.ModrinthEnvironment
 import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.publish.PublishingExtension
@@ -19,6 +20,8 @@ class PublishingOptions {
     var curseForgeRequiredDependencies: List<String>? = null
     var modrinth: String? = null
     var modrinthRequiredDependencies: List<String>? = null
+    var client: Boolean = true
+    var server: Boolean = true
 }
 
 open class BaseExtension(private val project: Project) {
@@ -55,6 +58,8 @@ open class BaseExtension(private val project: Project) {
                         minecraftVersions.add(mcVersion)
                         changelogType.set("markdown")
                         projectId.set(it)
+                        client.set(options.client)
+                        server.set(options.server)
                         options.curseForgeRequiredDependencies?.forEach { requires(it) }
                     }
                 }
@@ -63,6 +68,13 @@ open class BaseExtension(private val project: Project) {
                         accessToken.set(System.getenv("MODRINTH_TOKEN"))
                         projectId.set(it)
                         minecraftVersions.add(mcVersion)
+                        if (options.client && options.server) {
+                            environment.set(ModrinthEnvironment.CLIENT_AND_SERVER)
+                        } else if (options.client) {
+                            environment.set(ModrinthEnvironment.CLIENT_ONLY)
+                        } else if (options.server) {
+                            environment.set(ModrinthEnvironment.SERVER_ONLY)
+                        }
                         options.modrinthRequiredDependencies?.forEach { requires(it) }
                     }
                 }

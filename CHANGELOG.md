@@ -7,6 +7,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-07-10
+
+### Added
+
+-   Support for client/server environment setting in publishing to Modrinth or CurseForge. Defaults to both requiring client and server.
+
+### Fixed
+
+-   Upgrade all dependencies.
+
 ## [1.6.4] - 2026-04-21
 
 ### Fixed
@@ -503,7 +513,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.4...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.7.0...HEAD
+
+[1.7.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.4...v1.7.0
 
 [1.6.4]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.3...v1.6.4
 

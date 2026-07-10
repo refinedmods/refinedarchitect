@@ -15,7 +15,7 @@ catalog {
         library("apiguardian", "org.apiguardian", "apiguardian-api").versionRef(apiGuardian)
 
         // See: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-        val junit = version("junit", "6.1.0-M1")
+        val junit = version("junit", "6.1.1")
         library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junit)
         library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junit)
         library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef(junit)
@@ -29,7 +29,7 @@ catalog {
         library("mockito", "org.mockito", "mockito-core").versionRef(mockito)
 
         // See: https://mvnrepository.com/artifact/nl.jqno.equalsverifier/equalsverifier
-        val equalsVerifier = version("equalsverifier", "4.4.1")
+        val equalsVerifier = version("equalsverifier", "4.5")
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // See: https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
@@ -42,7 +42,7 @@ catalog {
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // See: https://modrinth.com/mod/modmenu
-        val modmenu = version("modmenu", "18.0.0-alpha.8")
+        val modmenu = version("modmenu", "18.0.0")
         library("modmenu", "com.terraformersmc", "modmenu").versionRef(modmenu)
     }
 }
