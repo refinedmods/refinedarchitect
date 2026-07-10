@@ -36,7 +36,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.sonarqube/org.sonarqube.gradle.plugin
     implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:7.2.2.6593")
     // See: https://modmuss50.github.io/mod-publish-plugin/getting_started/
-    implementation("me.modmuss50:mod-publish-plugin:1.1.0")
+    implementation("me.modmuss50:mod-publish-plugin:2.1.1")
 }
 
 publishing {

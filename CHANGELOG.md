@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Support for client/server environment setting in publishing to Modrinth or CurseForge. Defaults to both requiring client and server.
+
 ## [1.6.4] - 2026-04-21
 
 ### Fixed
