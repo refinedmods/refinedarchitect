@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.7.1] - 2026-08-09
+
+### Fixed
+
+-   Pitest now also exports an XML report.
+
 ## [1.7.0] - 2026-07-10
 
 ### Added
@@ -513,7 +519,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 -   Gradle helpers for Fabric and Forge projects.
 -   CI workflows.
 
-[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/refinedmods/refinedarchitect/compare/v1.7.1...HEAD
+
+[1.7.1]: https://github.com/refinedmods/refinedarchitect/compare/v1.7.0...v1.7.1
 
 [1.7.0]: https://github.com/refinedmods/refinedarchitect/compare/v1.6.4...v1.7.0
 

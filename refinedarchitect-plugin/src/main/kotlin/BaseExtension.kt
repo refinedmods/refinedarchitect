@@ -87,7 +87,7 @@ open class BaseExtension(private val project: Project) {
         project.extensions.getByType<PitestPluginExtension>().apply {
             junit5PluginVersion.set("1.2.3")
             pitestVersion.set("1.23.0")
-            outputFormats.set(listOf("HTML"))
+            outputFormats.set(listOf("HTML", "XML"))
             mutationThreshold.set(90)
             coverageThreshold.set(80)
         }
