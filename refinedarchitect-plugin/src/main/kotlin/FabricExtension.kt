@@ -1,5 +1,6 @@
 import net.fabricmc.loom.api.LoomGradleExtensionAPI
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.tasks.Jar
 import org.gradle.kotlin.dsl.get
@@ -62,5 +63,25 @@ open class FabricExtension(private val project: Project) : BaseExtension(project
         project.tasks.withType<Jar>().configureEach {
             from("../LICENSE.md")
         }
+    }
+
+    fun gameTests() {
+        val sourceSets = project.extensions.getByType<JavaPluginExtension>().sourceSets
+        project.extensions.getByType<LoomGradleExtensionAPI>().apply {
+            runs.create("gameTest") {
+                server()
+                setConfigName("Fabric Game Test")
+                ideConfigGenerated(true)
+                runDir("run")
+                source(sourceSets["test"])
+                property("fabric-api.gametest", "true")
+                property(
+                    "fabric-api.gametest.report-file",
+                    project.layout.buildDirectory.file("reports/gametest/gametest.xml").get().asFile.absolutePath
+                )
+            }
+        }
+        // The test source set in this subproject is used for Minecraft game tests, not for JUnit tests.
+        project.tasks.getByName("test").onlyIf { false }
     }
 }

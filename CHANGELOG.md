@@ -7,6 +7,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+-   Game tests can now run on Fabric.
+
 ## [1.7.1] - 2026-08-09
 
 ### Fixed
