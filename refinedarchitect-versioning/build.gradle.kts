@@ -33,7 +33,7 @@ catalog {
         library("equalsverifier", "nl.jqno.equalsverifier", "equalsverifier").versionRef(equalsVerifier)
 
         // See: https://www.curseforge.com/minecraft/mc-mods/cloth-config/files
-        val clothConfig = version("cloth-config-fabric", "26.1.154")
+        val clothConfig = version("cloth-config-fabric", "26.3.159")
         library("cloth-config", "me.shedaniel.cloth", "cloth-config-fabric").versionRef(clothConfig)
 
         // See: https://github.com/TechReborn/Energy?tab=readme-ov-file#including-the-api-in-your-project
@@ -42,7 +42,7 @@ catalog {
         library("teamreborn-energy", "teamreborn", "energy").versionRef(energy)
 
         // See: https://modrinth.com/mod/modmenu
-        val modmenu = version("modmenu", "18.0.0")
+        val modmenu = version("modmenu", "21.0.0")
         library("modmenu", "com.terraformersmc", "modmenu").versionRef(modmenu)
     }
 }
